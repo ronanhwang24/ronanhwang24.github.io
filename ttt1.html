@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            justify-content: start;
+            gap: 5px;
+        }
+        .container > div {
+            background-color: #ece8e8;
+            border: 1px solid rgb(0, 0, 0);
+            height: 150px;
+            width: 150px;
+            font-size: 150px;
+            text-align: center;
+            justify-content: center;
+            color: black;
+            padding-bottom: 10px;
+        }
+
+        .container > div:hover {
+            background-color: green;
+        }   
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div id = "1" onclick = "clicked(this); checkWinner()"> </div>
+        <div id = "2" onclick = "clicked(this); checkWinner()"> </div>
+        <div id = "3" onclick = "clicked(this); checkWinner()"> </div>
+        <div id = "4" onclick = "clicked(this); checkWinner()"> </div>
+        <div id = "5" onclick = "clicked(this); checkWinner()"> </div>
+        <div id = "6" onclick = "clicked(this); checkWinner()"> </div>
+        <div id = "7" onclick = "clicked(this); checkWinner()"> </div>
+        <div id = "8" onclick = "clicked(this); checkWinner()"> </div>
+        <div id = "9" onclick = "clicked(this); checkWinner()"> </div>
+    </div>
+
+    <script>
+        document.getElementById("3").innerText = "X";
+        document.getElementById("2").innerText = "X";
+        document.getElementById("6").innerText = "O";
+        player = true;
+        function clicked(box) {
+            //Check for a winner
+
+            //Check if it is an empty box
+            if (box.innerText == "") {
+                //Make X or O depending on player number
+                if (player) {
+                    box.innerText = "X"
+                    player = false;
+                }
+                else {
+                    box.innerText = "O"
+                    player = true;
+                }
+            }
+        }
+        function checkWinner(box) {
+            box1 = document.getElementById("1").innerText;
+            box2 = document.getElementById("2").innerText;
+            box3 = document.getElementById("3").innerText;
+            box4 = document.getElementById("4").innerText;
+            box5 = document.getElementById("5").innerText;
+            box6 = document.getElementById("6").innerText;
+            box7 = document.getElementById("7").innerText;
+            box8 = document.getElementById("8").innerText;
+            box9 = document.getElementById("9").innerText;
+            
+            //Check for a winner 
+            switch (true) {
+                case (box1 === box2 && box2 === box3 && box1 != ""):
+                case (box4 === box5 && box5 === box6 && box4 != ""):
+                case (box7 === box8 && box8 === box9 && box7 != ""):
+                case (box1 === box4 && box4 === box7 && box1 != ""):
+                case (box2 === box5 && box5 === box8 && box2 != ""):
+                case (box3 === box6 && box6 === box9 && box3 != ""):
+                case (box1 === box5 && box5 === box9 && box1 != ""):
+                case (box3 === box5 && box5 === box7 && box3 != ""):
+                    if (!player) {
+                        alert("Winner player X");
+                    } else {
+                        alert("Winner player O");
+                    }
+                    break;
+                //If all boxes are filled and there was no winner
+                case (box1 != "" && box2 != "" && box3 != "" && 
+                    box4 != "" && box5 != "" && box6 != "" &&
+                    box7 != "" && box8 != "" && box9 != ""):
+                    alert("Tie, No winner");
+                    break;
+            }
+
+        }
+    </script>
+    
+</body>
+</html>
+
+
