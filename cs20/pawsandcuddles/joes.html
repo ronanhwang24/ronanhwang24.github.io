@@ -1,0 +1,78 @@
+<html>
+<head>
+  <title>Joe's Hotdog Stand</title>
+  <style>
+    h1 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1> Joe's Hotdog Stand <br></h1>
+
+  <script>
+    
+    //Const variables
+    const hotdogs = 4.99;
+    const fries = 3.99;
+    const sodas = 1.79;
+
+    //Prompt user
+    numDogs = prompt("How many hotdogs do you want?");
+    numFries = prompt("How many fries do you want?");
+    numSoda = prompt("How many sodas do you want?");
+
+    function showMoney(num) {
+      // Multiply by 100, round to nearest integer, then divide by 100
+      rounded_num = Math.round(num * 100) / 100;
+      
+      // Convert to string
+      str_num = rounded_num.toString();
+      
+      // If there's no decimal, add .00
+      if (str_num.indexOf('.') === -1) {
+        str_num += '.00';
+      } else {
+          decimalPart = str_num.split('.')[1];
+          if (decimalPart.length === 1) {        //If there is only one decimal
+            str_num += '0';
+          }
+      }
+      return str_num;
+    }
+
+    if (numDogs < 0 || numFries < 0 || numSoda < 0 || isNaN(numDogs) || isNaN(numFries) || isNaN(numSoda)) { 
+      document.write("You entered an invalid number of hotdogs and/or fries and/or sodas, please refresh page and try again. <br>");
+    }
+    else {
+      //quantity of each item ordered and the total cost for that item
+      document.write("You ordered: " + numDogs + " hotdog(s), " + numFries + " set(s) of fries and " + numSoda + " soda(s) <br>");
+      document.write("Total cost for hot dogs: $" + showMoney(numDogs * hotdogs) + "<br>");
+      document.write("Total cost for fries: $" + showMoney(numFries * fries) + "<br>");
+      document.write("Total cost for sodas: $" + showMoney(numSoda * sodas) + "<br>");
+      
+      //subtotal before discount
+      total = (numDogs * hotdogs) + (numFries * fries) + (numSoda * sodas);
+      document.write("Total cost before discount: $" + showMoney(total) + "<br>");
+      
+      //discount, if applicable
+      if (total >= 30) {
+        //subtotal after discount
+        total *= 0.9
+        document.write("Discount applied, your new total is $" + showMoney(total) + "<br>");
+      }  
+      else {
+        document.write("Your purchase was under 30 dollars, so there was no discount <br>");
+      }
+      
+      //tax amount
+      document.write("The tax amount is 6.25% <br>");
+      
+      //final total 
+      document.write("With tax of 6.25%, your final total is $" + showMoney(total * 1.0625) + "<br>");
+    }
+  </script>
+</body>
+</html>
+
+

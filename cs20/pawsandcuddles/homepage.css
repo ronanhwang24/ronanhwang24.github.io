@@ -1,0 +1,155 @@
+
+.topnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #b61d36;
+}
+
+.topnav a {
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px 15px;
+  text-decoration: none;
+  font-size: 25px;
+  display: inline-block;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: b61d36;
+}
+
+.topnav a.active {
+  background-color: #b61d36;
+  color: white;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('beacuddler.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.Title {
+  text-align: center;
+}
+
+.Title h1 {
+  font-size: 120px; 
+  font-family: 'Playfair Display', serif; 
+  font-weight: bold;
+  color: #b61d36;
+  margin-bottom: 5px;
+  margin-top: 5px; 
+}
+
+.Title h2 {
+  font-size: 30px; 
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  color: #b61d36;
+  margin-top: 5px;
+}
+
+.Section1 {
+  display: flex; 
+  justify-content: space-between; 
+  width: 80%; 
+  margin: 50px auto;
+}
+
+.s1 {
+  flex: 1;
+  padding: 20px;
+}
+
+.photo {
+  margin-top: 5px;
+  border-radius: 90%;
+}
+
+img {
+  border-radius: 10%;
+  margin-left: 40%;
+}
+
+.form-container {
+  max-width: 30%; 
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  margin-left: 200px;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #000000;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+    background-color: #b61d36;
+}
+
+@media (max-width: 1200px) {
+  .form-container {
+    max-width: 50%;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 850) {
+  .topnav a {
+    font-size: 15px;
+  }
+
+  .Title h1 {
+  font-size: 60px; 
+  }
+
+  .Title h2 {
+    font-size: 15px;
+  }
+
+  .content h2 {
+    font-size: 15px;
+  }
+
+  input, select, textarea {
+      font-size: 0.9rem; 
+  }
+
+  button {
+      font-size: 0.9rem; 
+  }
+
+  .photo {
+      display: none;
+      opacity: 0%;
+  }
+}
