@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Tic Tac Toe</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            font-size: 50px;
+            text-align: center;
+        }
+        #board {
+            display: grid;
+            grid-template-columns: repeat(3, 150px);
+            grid-template-rows: repeat(3, 150px);   
+            gap: 5px;
+            justify-content: center;
+        }
+        .square {
+            border: 1px solid black;
+            justify-content: center;
+            align-items: center;
+            font-size: 150px;
+        }
+
+        .square:hover {
+            background-color: green;
+        }
+
+        .player {
+            font-size: 40px;
+            margin: 80px 0;
+            font-weight: bold;
+            border: 2px solid black;
+            padding: 25px;
+        }
+
+        .winner {
+            margin-top: 20px;
+            border: 2px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <div class="player" id="playerTurn"></div>
+    </div>
+    <div id="board">
+        <script>
+            const NUM_SQUARES = 9;
+            for (i=0; i<NUM_SQUARES; i++) {
+                id = "sq"+i;
+                document.write("<div class='square' id='" + id + "'></div>");
+            }
+            
+        </script>
+    </div>
+    <div class="winner" id="winner"></div>
+
+    <script>
+        document.getElementById("winner").innerText = "No winner yet";
+        player = "X";
+        document.getElementById("sq2").innerText = "X";
+        document.getElementById("sq3").innerText = "O";
+        document.getElementById("playerTurn").innerText = `It is player ${player}'s turn`;
+    </script>
+</body>
+</html>

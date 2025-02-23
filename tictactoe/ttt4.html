@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic Tac Toe</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            font-size: 50px;
+            text-align: center;
+        }
+        #board {
+            display: grid;
+            grid-template-columns: repeat(3, 150px);
+            grid-template-rows: repeat(3, 150px);   
+            gap: 5px;
+            justify-content: center;
+        }
+        .square {
+            border: 1px solid black;
+            justify-content: center;
+            align-items: center;
+            font-size: 150px;
+        }
+
+        .square:hover {
+            background-color: green;
+        }
+
+        .player {
+            font-size: 40px;
+            margin: 80px 0;
+            font-weight: bold;
+            border: 2px solid black;
+            padding: 25px;
+        }
+
+        .winner {
+            margin-top: 20px;
+            border: 2px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <div class="player" id="playerTurn"></div>
+    <button onclick="startGame()">Start Game</button>
+    <div id="board">
+        <script>
+            const NUM_SQUARES = 9;
+            for (let i = 0; i < NUM_SQUARES; i++) {
+                const id = "sq" + i;
+                document.write("<div class='square' id='" + id + "' onclick='clicked(" + i + ")'></div>");
+            }
+        </script>
+    </div>
+
+    <div class="winner" id="winner"></div>
+
+    <script>
+
+        function startGame() {
+            //Clear the board
+            for (let i = 0; i < NUM_SQUARES; i++) {
+                document.getElementById("sq" + i).innerText = "";
+            }
+            //Randomly choose starting player
+            if (Math.random() < 0.5) { player = "X"}
+            else { player = "O"}
+            //Reset messages on website
+            document.getElementById("winner").innerText = "No winner yet";
+            document.getElementById("playerTurn").innerText = `It is player ${player}'s turn`;
+        }
+
+        function clicked(i) {
+            square = document.getElementById("sq" + i);
+            //Check if the square is empty and there is no winner yet
+            if (square.innerText === "" && document.getElementById("winner").innerText === "No winner yet") {
+                square.innerText = player;
+                alert(`You clicked square ${i}`);
+                //Check for winner
+                checkWinner();
+                //Switch players
+                if (player === "X") { player = "O"}
+                else { player = "X"}
+                document.getElementById("playerTurn").innerText = `It is player ${player}'s turn`;
+            }
+        }
+
+        function checkWinner() {
+            moves = new Array(9).fill(null);
+            moves.forEach((_, index) => {
+                // Get the element with the corresponding id
+                const sq = document.getElementById("sq" + index);
+                let item = sq.innerText;
+                if (item === "") { item = "-"; }
+                moves[index] = item;
+            });     
+
+            //Create array of winConditions
+            winConditions = new Array(8).fill(null);
+            winConditions[0] = moves[0]+ moves[1]+ moves[2];
+            winConditions[1] = moves[3]+ moves[4]+ moves[5];
+            winConditions[2] = moves[6]+ moves[7]+ moves[8];
+            winConditions[3] = moves[0]+ moves[3]+ moves[6];
+            winConditions[4] = moves[1]+ moves[4]+ moves[7];
+            winConditions[5] = moves[2]+ moves[5]+ moves[8];
+            winConditions[6] = moves[0]+ moves[4]+ moves[8];
+            winConditions[7] = moves[2]+ moves[4]+ moves[6];
+
+            //Get winning condiiton of current player
+            player_ID = player + player + player;
+            counter = 0;
+            //Check for winner in the winConditions array
+            for (i = 0; i < winConditions.length; i++) { 
+                if (winConditions[i] === player_ID) {
+                    document.getElementById("winner").innerText = `Player ${player} wins!`;
+                    break;
+                }
+                //Check for tiebreaker
+                else if (i == 7 && counter == 7) {
+                    document.getElementById("winner").innerText = "Tie, no winner";
+                    break;
+                }
+                else {
+                    if (winConditions[i].indexOf("-") === -1) {
+                        counter++;
+                    }
+                    document.getElementById("winner").innerText = "No winner yet";
+                }
+            }
+        }
+        //Initialize the game on page load
+        startGame();
+    </script>
+</body>
+</html>
