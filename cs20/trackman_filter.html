@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSV File Filter and Manipulate</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script>
+        var filtered_data = [];
+
+        function handleFileSelect(event) {
+            var file = event.target.files[0];
+            if (file) {
+                Papa.parse(file, {
+                    header: true,
+                    dynamicTyping: true,
+                    complete: function(results) {
+                        var data = results.data;
+                        populateDropdowns(data);
+                        window.csvData = data; // Store the data globally
+                    }
+                });
+            }
+        }
+
+        function populateDropdowns(data) {
+            var dates = {};
+            var pitcherTeams = new Set();
+            var batterTeams = new Set();
+            var pitcherHandedness = new Set();
+            var batterHandedness = new Set();
+            data.forEach(row => {
+                if (row.Date && !dates[row.Date]) {
+                    dates[row.Date] = `${row.Date} (${row.PitcherTeam} vs ${row.BatterTeam})`;
+                }
+                if (row.PitcherTeam) {
+                    pitcherTeams.add(row.PitcherTeam);
+                }
+                if (row.BatterTeam) {
+                    batterTeams.add(row.BatterTeam);
+                }
+                if (row.PitcherThrows) {
+                    pitcherHandedness.add(row.PitcherThrows);
+                }
+                if (row.BatterSide) {
+                    batterHandedness.add(row.BatterSide);
+                }
+            });
+
+            populateCheckboxes("dateCheckboxes", dates);
+            populateDropdown("pitcherTeamDropdown", pitcherTeams);
+            populateDropdown("batterTeamDropdown", batterTeams);
+            populateDropdown("PHandednessDropdown", pitcherHandedness);
+            populateDropdown("BHandednessDropdown", batterHandedness);
+        }
+
+        function populateCheckboxes(containerId, items) {
+            var container = document.getElementById(containerId);
+            container.innerHTML = ''; // Reset container
+
+            for (var key in items) {
+                var checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+                checkbox.value = key;
+                checkbox.id = key;
+                checkbox.onchange = filterData; // Add onchange event
+
+                var label = document.createElement("label");
+                label.htmlFor = key;
+                label.appendChild(document.createTextNode(items[key]));
+
+                container.appendChild(checkbox);
+                container.appendChild(label);
+                container.appendChild(document.createElement("br"));
+            }
+        }
+
+        function populateDropdown(dropdownId, items) {
+            var dropdown = document.getElementById(dropdownId);
+            dropdown.innerHTML = '<option value="na">N/A</option>'; // Reset dropdown
+
+            items.forEach(item => {
+                var option = document.createElement("option");
+                option.value = item;
+                option.text = item;
+                dropdown.appendChild(option);
+            });
+        }
+
+        function filterData() {
+            var selectedDates = Array.from(document.querySelectorAll("#dateCheckboxes input:checked")).map(checkbox => checkbox.value);
+            var selectedPitcherTeam = document.getElementById("pitcherTeamDropdown").value;
+            var selectedPitcher = document.getElementById("pitcherDropdown").value;
+            var selectedBatterTeam = document.getElementById("batterTeamDropdown").value;
+            var selectedBatter = document.getElementById("batterDropdown").value;
+            var selectedPHandedness = document.getElementById("PHandednessDropdown").value;
+            var selectedBHandedness = document.getElementById("BHandednessDropdown").value;
+
+            filtered_data = window.csvData.filter(row => {
+                return (selectedDates.length === 0 || selectedDates.includes(row.Date)) &&
+                       (selectedPitcherTeam === "na" || row.PitcherTeam === selectedPitcherTeam) &&
+                       (selectedPitcher === "na" || row.Pitcher === selectedPitcher) &&
+                       (selectedBatterTeam === "na" || row.BatterTeam === selectedBatterTeam) &&
+                       (selectedBatter === "na" || row.Batter === selectedBatter) &&
+                       (selectedPHandedness === "na" || row.PitcherThrows === selectedPHandedness) &&
+                       (selectedBHandedness === "na" || row.BatterSide === selectedBHandedness);
+            });
+
+            populatePitcherDropdown(filtered_data);
+            populateBatterDropdown(filtered_data);
+            displayData(filtered_data);
+        }
+
+        function populatePitcherDropdown(data) {
+            var pitchers = new Set();
+            data.forEach(row => {
+                if (row.Pitcher) {
+                    pitchers.add(row.Pitcher);
+                }
+            });
+
+            var pitcherDropdown = document.getElementById("pitcherDropdown");
+            pitcherDropdown.innerHTML = '<option value="na">N/A</option>'; // Reset dropdown
+
+            pitchers.forEach(pitcher => {
+                var option = document.createElement("option");
+                option.value = pitcher;
+                option.text = pitcher;
+                pitcherDropdown.appendChild(option);
+            });
+        }
+
+        function populateBatterDropdown(data) {
+            var batters = new Set();
+            data.forEach(row => {
+                if (row.Batter) {
+                    batters.add(row.Batter);
+                }
+            });
+
+            var batterDropdown = document.getElementById("batterDropdown");
+            batterDropdown.innerHTML = '<option value="na">N/A</option>'; // Reset dropdown
+
+            batters.forEach(batter => {
+                var option = document.createElement("option");
+                option.value = batter;
+                option.text = batter;
+                batterDropdown.appendChild(option);
+            });
+        }
+
+        function displayData(data) {
+            var table = document.getElementById("dataTable");
+            table.innerHTML = ""; // Clear previous data
+
+            // Create table headers
+            var headers = Object.keys(data[0]);
+            var headerRow = document.createElement("tr");
+            headers.forEach(header => {
+                var th = document.createElement("th");
+                th.textContent = header;
+                headerRow.appendChild(th);
+            });
+            table.appendChild(headerRow);
+
+            // Create table rows
+            data.forEach(row => {
+                var tr = document.createElement("tr");
+                headers.forEach(header => {
+                    var td = document.createElement("td");
+                    td.textContent = row[header];
+                    tr.appendChild(td);
+                });
+                table.appendChild(tr);
+            });
+        }
+
+        //Use Datafram to make the table
+        
+
+    </script>
+</head>
+<body>
+    <h1>Select a Pitcher Team and Batter Team</h1>
+    <input type="file" id="csvFileInput" accept=".csv" onchange="handleFileSelect(event)">
+    <div id="dateCheckboxes"></div>
+    <h2>Pitcher Team</h2>
+    <select id="pitcherTeamDropdown" onchange="filterData()">
+        <option value="na">N/A</option>
+    </select>
+    <h2>Pitcher Handedness</h2>
+    <select id="PHandednessDropdown" onchange="filterData()">
+        <option value="na">N/A</option>
+    </select>
+    <h2>Pitcher</h2>
+    <select id="pitcherDropdown" onchange="filterData()">
+        <option value="na">N/A</option>
+    </select>
+    <h2>Batter Team</h2>
+    <select id="batterTeamDropdown" onchange="filterData()">
+        <option value="na">N/A</option>
+    </select>
+    <h2>Batter Handedness</h2>
+    <select id="BHandednessDropdown" onchange="filterData()">
+        <option value="na">N/A</option>
+    </select>
+    <h2>Batter</h2>
+    <select id="batterDropdown" onchange="filterData()">
+        <option value="na">N/A</option>
+    </select>
+    <h2>Filtered Data</h2>
+    <table id="dataTable">
+    </table>
+
+    <script>
+        filtered_data = filtered_data[['PitchNo', 'PAofInning', 'PitchofPA', 'Pitcher', 'PitcherThrows', 'PitcherTeam', 'Batter', 'BatterSide',  'BatterTeam', 'PitcherSet', 'Inning', 'Top/Bottom', 'Outs', 'Balls', 'Strikes', 'TaggedPitchType', 'PitchCall', 'KorBB', 'TaggedHitType', 'PlayResult', 'OutsOnPlay', ]]
+        print(filtered_data)
+    </script>
+
+</body>
+</html>
