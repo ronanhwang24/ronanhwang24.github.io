@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type = "text/css" href="H&F.css">
+         <link rel="stylesheet" type = "text/css" href="H&F.css"> 
         <style> 
+
+            div#title {
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+                
+            }
+
             div#form {
                 display: block;
-                align-items: center;
                 text-align: left;
-                padding: 10px;
-                border: 2px solid black;
-                width: 200px;
+                padding: 20px;
+                border: 2px solid black; 
+                border-radius: 10px;
+                width: 350px;
+                height: 400px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 30px;
+                padding-bottom: 55px;
+                font-size: 17px;
                 
             }
    
@@ -17,39 +31,78 @@
     </head>
     <body>
         
-       <!--  add nav here -->
-
-       <!-- use javascript or jquery to validate form -->
        <div id="title">
             <h1> Contact Us! </h1>
         </div>
         <div id="form"> 
             <form method=‘get’ action=#>
                 Name: <br>
-                    <input type="text", name = "name"> <br> <br>
+                    <input type="text", name = "name", id = "name"> <br> <br>
                 Email: <br>
-                    <input type="email", email = "email"> <br> <br>
+                    <input type="email", email = "email", id = "email"> <br> <br>
                 Phone Number: <br>
-                    <input type="tel", phone = "phone"> <br> <br>
+                    <input type="tel", phone = "phone", id = "phone"> <br> <br>
                 Preferred mode of communication: <br>
                     <input type="radio" id="callMe" name="mode" value="call">
                     <label for="callMe"> Phone</label><br>
                     <input type="radio" id="emailMe" name="mode" value="email">
                     <label for="emailMe"> Email</label><br> <br>
                 <label for="issue">Issue:</label> <br>
-                    <select id="issues" name="issues">
-                        <option value="mattresses">Mattresses</option>
-                        <option value="subscription">Subscription</option>
-                        <option value="other">Other</option>
+                    <select name="issues">
+                        <option selected = "selected" disabled = "disabled" value="choose">Choose an option</option>
+                        <option value="mattresses" id = "mattress">Mattresses</option>
+                        <option value="subscription" id = "subscription">Subscription</option>
+                        <option value="other" id = "other">Other</option>
                     </select> <br> <br>
                 How can we help? <br>
-                    <input type="text", message = "message"> <br> <br>
+                    <input type="text", message = "message", id = "help"> <br> <br>
                 <input type="submit">
             </form>
         </div>
         
-        <!-- add footer here -->
-          <footer></footer>
+        <script> 
+            onsubmit = function() {
+                nameVal = document.getElementById("name").value
+                if(nameVal == "") {
+                    alert("Please enter your name.")
+                    return false;
+                }
+                emailVal = document.getElementById("email").value
+                if(emailVal == "") {
+                    alert("Please enter your email.")
+                    return false;
+                }
+                phoneVal = document.getElementById("phone").value
+                if(phoneVal == "") {
+                    alert("Please enter your phone number.")
+                    return false;
+                }
+               
+                phoneChecked = document.getElementById("callMe").checked
+                emailChecked = document.getElementById("emailMe").checked
+                if(!phoneChecked && !emailChecked) {
+                    alert("Please tell us your preferred method of communication.")
+                    return false;
+                }
+
+                mattressChecked = document.getElementById("mattress").selected
+                subscriptionChecked = document.getElementById("subscription").selected
+                otherChecked = document.getElementById("other").selected
+                if((!mattressChecked && !subscriptionChecked) && !otherChecked) {
+                    alert("Please select the type of issue you are having.")
+                    return false;
+                }
+
+                messageVal = document.getElementById("help").value
+                if(messageVal == "") {
+                    alert("Please give us some more information as to how we can help you.")
+                    return false;
+                }
+                alert("Thank you for contacting our team. We will reach out to you within 1-2 business days. ")
+                return true;
+            }
+        </script>
+          
 
     </body>
 </html>
