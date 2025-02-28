@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type = "text/css" href="H&F.css">
+        <style> 
+            div#form {
+                display: block;
+                align-items: center;
+                text-align: left;
+                padding: 10px;
+                border: 2px solid black;
+                width: 200px;
+                
+            }
+   
+        </style>
+    </head>
+    <body>
+        
+       <!--  add nav here -->
+
+       <!-- use javascript or jquery to validate form -->
+       <div id="title">
+            <h1> Contact Us! </h1>
+        </div>
+        <div id="form"> 
+            <form method=‘get’ action=#>
+                Name: <br>
+                    <input type="text", name = "name"> <br> <br>
+                Email: <br>
+                    <input type="email", email = "email"> <br> <br>
+                Phone Number: <br>
+                    <input type="tel", phone = "phone"> <br> <br>
+                Preferred mode of communication: <br>
+                    <input type="radio" id="callMe" name="mode" value="call">
+                    <label for="callMe"> Phone</label><br>
+                    <input type="radio" id="emailMe" name="mode" value="email">
+                    <label for="emailMe"> Email</label><br> <br>
+                <label for="issue">Issue:</label> <br>
+                    <select id="issues" name="issues">
+                        <option value="mattresses">Mattresses</option>
+                        <option value="subscription">Subscription</option>
+                        <option value="other">Other</option>
+                    </select> <br> <br>
+                How can we help? <br>
+                    <input type="text", message = "message"> <br> <br>
+                <input type="submit">
+            </form>
+        </div>
+        
+        <!-- add footer here -->
+          <footer></footer>
+
+    </body>
+</html>
