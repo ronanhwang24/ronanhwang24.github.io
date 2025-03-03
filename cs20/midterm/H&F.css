@@ -22,6 +22,14 @@ footer {
     height: 10vh;
     padding: 20px;
     border-top: 2px solid #313131;
+    color: #9ACAE0;
+    font-family: serif, "Lato";
+}
+footer div {
+   position: absolute;
+   bottom: 0;
+   width: 100vw;
+   text-align: center;
 }
 .s1,.s2 {
     margin-left: 0;
