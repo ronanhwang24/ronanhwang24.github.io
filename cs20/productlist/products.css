@@ -1,0 +1,39 @@
+product {
+    display: block;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+item {
+    display: block;
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: lightgray;
+}
+
+item name {
+    display:block;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+item description {
+    display:block;
+    font-size: 20px;
+    color: rgb(51, 51, 51);
+}
+
+item price {
+    display:block;
+    font-size: 25px;
+    color: green;
+    font-weight: bold;
+}
+
+item category {
+    display:block;
+    font-size: 15px;
+    color: black;
+}
