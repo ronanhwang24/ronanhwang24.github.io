@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href = "products.css" ?>
+<product>
+    <item>
+        <name>Lululemon T-shirt</name>
+        <description>Heathered Warp Teal Soft Jersey Short-Sleeve Shirt</description>
+        <price>$30</price>
+        <category>clothing</category>
+    </item>
+
+     <item>
+        <name>Baseball Jersey</name>
+        <description>Tristan Cases Red Sox Jersey</description>
+        <price>$90</price>
+        <category>clothing, sports</category>
+    </item>
+
+     <item>
+        <name>iPhone</name>
+        <description>Brand new iPhone 13 Pro Max</description>
+        <price>$500</price>
+        <category>electronics</category>
+    </item>
+
+     <item>
+        <name>PS5</name>
+        <description>Brand new Playstation 5</description>
+        <price>$500</price>
+        <category>electronics</category>
+    </item>
+
+     <item>
+        <name>MLB the Show 25</name>
+        <description>MLB The Show CD for PS5</description>
+        <price>$80</price>
+        <category>electronics, sports</category>
+    </item>
+
+     <item>
+        <name>iPad Pencil</name>
+        <description>Stylist for apple devices</description>
+        <price>$70</price>
+        <category>electronics</category>
+    </item>
+     <item>
+        <name>Apple USB-C Charger</name>
+        <description>Charger for Macbook and new iPhone/iPad's</description>
+        <price>$40</price>
+        <category>electronics</category>
+    </item>
+
+     <item>
+        <name>David Ortiz Signed Baseball</name>
+        <description>Baseball signed by David Ortiz after winning the 2013 World Series</description>
+        <price>$125</price>
+        <category>sports</category>
+    </item>
+</product>
