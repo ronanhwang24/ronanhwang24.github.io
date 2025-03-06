@@ -105,29 +105,7 @@
             });
             populatePitcherDropdown(filtered_data);
             populateBatterDropdown(filtered_data);
-            filtered_data = filtered_data.map(row => ({
-                PitchNo: row.PitchNo,
-                PAofInning: row.PAofInning,
-                PitchofPA: row.PitchofPA,
-                Pitcher: row.Pitcher,
-                PitcherThrows: row.PitcherThrows,
-                PitcherTeam: row.PitcherTeam,
-                Batter: row.Batter,
-                BatterSide: row.BatterSide,
-                BatterTeam: row.BatterTeam,
-                PitcherSet: row.PitcherSet,
-                Inning: row.Inning,
-                TopBottom: row['Top/Bottom'],
-                Outs: row.Outs,
-                Balls: row.Balls,
-                Strikes: row.Strikes,
-                TaggedPitchType: row.TaggedPitchType,
-                PitchCall: row.PitchCall,
-                KorBB: row.KorBB,
-                TaggedHitType: row.TaggedHitType,
-                PlayResult: row.PlayResult,
-                OutsOnPlay: row.OutsOnPlay
-            }));
+
             displayData(filtered_data);
         }
 
