@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Lululemon T-shirt",
+        "description": "Heathered Warp Teal Soft Jersey Short-Sleeve Shirt",
+        "price": "$30",
+        "category": "clothing"
+    },
+    {
+        "name": "Baseball Jersey",
+        "description": "Tristan Cases Red Sox Jersey",
+        "price": "$90",
+        "category": "clothing, sports"
+    },
+    {
+        "name": "iPhone",
+        "description": "Brand new iPhone 13 Pro Max",
+        "price": "$500",
+        "category": "electronics"
+    },
+    {
+        "name": "PS5",
+        "description": "Brand new Playstation 5",
+        "price": "$500",
+        "category": "electronics"
+    },
+    {
+        "name": "MLB the Show 25",
+        "description": "MLB the Show 25 on PS5",
+        "price": "$80",
+        "category": "electronics, sports"
+    },
+    {
+        "name": "iPad Pencil",
+        "description": "Stylist for apple devices",
+        "price": "$70",
+        "category": "electronics"
+    },
+    {
+        "name": "Apple USB-C Charger",
+        "description": "Charger for Macbook and new iPhone/iPad's",
+        "price": "$40",
+        "category": "electronics"
+    },
+    {
+        "name": "David Ortiz Signed Baseball",
+        "description": "Baseball signed by David Ortiz after winning the 2013 World Series",
+        "price": "$125",
+        "category": "sports"
+    }
+]
