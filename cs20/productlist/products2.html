@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="products.css">
+        </style>
+    </head>
+    <body>
+        <div id="result">
+            <button onclick="loadProducts()">Load Products</button>
+        </div>
+        <script>
+            function loadProducts() {
+                $.get('https://ronanhwang24.github.io/cs20/productlist/products.json', function(data) {
+                    div = document.getElementById('result');
+                    div.innerHTML = '';
+                    data.forEach(function(item) {
+                        productHTML = `<item> 
+                                       <name>${item.name}</name>
+                                       <description>${item.description}</description>
+                                       <price>Price: ${item.price}</price>   
+                                       <category>Category: ${item.category}</category>
+                                       </item>`;
+                        div.innerHTML += productHTML;
+                    });
+                });
+            }
+        </script>
+    </body>
+</html>
