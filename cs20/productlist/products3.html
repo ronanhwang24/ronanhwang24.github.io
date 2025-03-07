@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="products.css">
+    </head>
+    <body>
+        <div id="result">
+            <button id="loadBtn">Load Products</button>
+        </div>
+        <select id="selectCategory"></select>
+        <button id="filterBtn">Filter</button>
+    <script>
+        $(document).ready(function() {
+            categories = [];
+        
+            $("#loadBtn").on("click", loadProducts);
+            $("#filterBtn").on("click", filterProducts);
+    
+            function loadProducts() {
+                $.get('https://ronanhwang24.github.io/cs20/productlist/products.json', function(data) {
+                
+                    $.each(data, function(index, item) {
+                        productHTML = `<item><name>${item.name}</name>
+                                    <description>${item.description}</description>
+                                    <price>Price: ${item.price}</price>
+                                    <category>Category: ${item.category}</category>
+                                    </item>`;
+                        $("#result").append(productHTML);
+                        
+                        //add to the list of categories if it exists
+                        temp = item.category.split(', ');
+                        $.each(temp, function(i, category) {
+                            if (!categories.includes(category)) {
+                                categories.push(category);
+                            }
+                        });
+                    });
+                    
+                    //create dropdown menu with categories using jQuery
+                    $("#selectCategory").empty();
+                    $.each(categories, function(i, category) {
+                        $("#selectCategory").append(
+                        $("<option>").val(category).text(category)
+                        );
+                    });
+                });
+            }
+            
+            //go thorugh the json file and find the products with chosen category
+            function filterProducts() {
+                selectedCategory = $("#selectCategory").val();
+                
+                $.get('https://ronanhwang24.github.io/cs20/productlist/products.json', function(data) {
+                $("#result").empty();
+                
+                $.each(data, function(index, item) {
+                    if (item.category.includes(selectedCategory)) {
+                    productHTML = `<item><name>${item.name}</name></item>`;
+                    $("#result").append(productHTML);
+                    }
+                });
+                });
+            }
+        });
+    </script>
+    </body>
+</html>
