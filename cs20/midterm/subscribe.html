@@ -1,121 +1,183 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>EarlyBird</title>
-         <link rel="stylesheet" type = "text/css" href="H&F.css"> 
-         <link rel="preconnect" href="https://fonts.googleapis.com">
-         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-        <style> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe - EarlyBird</title>
+    
+    <!-- Link to main CSS file -->
+    <link rel="stylesheet" type="text/css" href="H&F.css">
 
-             div#title {
-                margin-top: 50px;
-                margin-left: auto;
-                margin-right: auto;
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Global Styling */
+        body {
+            font-family: "Lato", sans-serif;
+            background-color: #9ACAE0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Title Styling */
+        #title {
+            margin-top: 50px;
+            font-size: 50px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Subscription Plans Section */
+        .plans-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin: 50px auto;
+            max-width: 1000px;
+        }
+
+        .plan {
+            background-color: rgb(237, 245, 248);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            height: auto;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            border: 2px solid black;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .plan:hover {
+            background-color: rgb(225, 223, 223);
+            transform: scale(1.05);
+        }
+
+        .plan h2 {
+            font-size: 28px;
+            color: #176D8F;
+        }
+
+        .plan h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .plan p {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        /* Perks Section */
+        #perks {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: left;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #perks h2 {
+            font-size: 30px;
+            color: #176D8F;
+            text-align: center;
+        }
+
+        #perks ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #perks li {
+            font-size: 18px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .plans-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .plan {
+                width: 90%;
+                max-width: 350px;
+            }
+
+            #perks {
+                width: 90%;
                 text-align: center;
-                margin-bottom: 70px;
-                font-size: 50px;
-                
-            } 
-            h1 {
-                font-size: 45px;
             }
-            h2 {
-                font-size: 35px;
-            }
-            .s2 {
-                font-size: 25px;
-            }
-             .plan {
-                display: block;
-                text-align: left;
-                padding: 20px;
-                border: 2px solid black; 
-                border-radius: 10px;
-                width: 300px;
-                height: 300px;
-                margin-top: 50px;
-                margin-right: 150px;
-                font-size: 20px;
-                font-weight: bold;
-                margin-bottom: 100px;
-                background-color: rgb(237, 245, 248);
-                float: right;
-                
-            } 
-            .plan:hover {
-                background-color: rgb(225, 223, 223);
-                
-                }
+        }
 
-            div#perks {
-                font-size: 20px;
-                margin-left: 100px;
-                font-weight: bold;
-                width: 750px;
-                font-size: 22px;
-            }
+    </style>
+</head>
+<body>
 
-
-            body {
-                display: inline-block;
-                background-color: #9ACAE0;
-            }
-            footer {
-                position: absolute;
-                bottom: 0;
-                width: 100vw;
-            }
-        </style>
-       
-    </head>
-
-    <body>
-        <div class="topnav">
-            <ul id = 'nav' class = 'nav'>
-            <li class="s1"><a class="start" href="main.html"><img src="Earlybird.png" alt="Earlybird image" width="60px" height="40px"></a></li>
+    <!-- Navbar -->
+    <div class="topnav">
+        <ul id='nav' class='nav'>
+            <li class="s1"><a class="start" href="main.html">
+                <img src="Earlybird.png" alt="Earlybird image" width="60px" height="40px"></a>
+            </li>
             <li class="s2"><a class="hname" href="main.html"><strong>EarlyBird</strong></a></li>
-            <li><a href="#about">Why Us</a></li>
+            <li><a href="why-us.html">Why Us</a></li>
             <li><a href="#contact">Metrics</a></li>
             <li><a href="#about">Reviews</a></li>
-            <li><a href="#contact">Subscriptions</a></li>
+            <li><a href="subscribe.html">Subscriptions</a></li>
             <li><a href="#about">Shop</a></li>
             <li class="conB"><a href="contact.html">Contact Us!</a></li>
-            </ul>
+        </ul>
+    </div>
+
+    <!-- Page Content -->
+    <div id="title">
+        <h1>Have the <strong>best sleep</strong> of your life.</h1>
+    </div> 
+
+    <!-- Subscription Plans -->
+    <div class="plans-container">
+        <div class="plan">
+            <h2>Free Trial</h2>
+            <h3>$0/month</h3>
+            <p>Try before you join.</p>
         </div>
-        
-        <div id="title">
-                <h1> Have the <strong> best sleep </strong> of your life. </h1> 
-                
-            </div> 
-    
-            <div class = "plan">
-                <h2> Free Trial</h1>
-                <h3> $0/month </h3> <br>
-                <p> Try before you join. </p>
-            </div>
 
+        <div class="plan">
+            <h2>Subscribe Now</h2>
+            <h3>$4.99/month</h3>
+            <p>Enjoy access to cutting-edge sleep tracking technology and insights.</p>
+        </div>
+    </div>
 
-            <div class = "plan">
-                <h2> Subscribe Now</h1>
-                <h3> $4.99/month </h3> <br>
-                <p> Enjoy access to cutting edge sleep tracking technology and insights. </p>
-            </div>
-    
+    <!-- Perks Section -->
+    <div id="perks">
+        <h2>As a member of EarlyBird, you'll unlock...</h2>
+        <ul>
+            <li>✅ Detailed metrics and analyses to improve your sleep quality.</li>
+            <li>✅ 24/7 membership support team for any concerns or questions.</li>
+            <li>✅ Exclusive access to fitness and health partnerships, giveaways, and collaborations.</li>
+            <li>✅ A community of like-minded, health-conscious people sharing insights.</li>
+            <li>✅ Personalized insights to help you become the best, most well-rested version of yourself.</li>
+        </ul>
+    </div>
 
-            
-            <div id="perks" >
-                <h2> As a member of EarlyBird, you'll unlock...</h1> <br>
-                <ul> 
-                    <li> Detailed metrics and analyses to improve your quality and quantity of sleep and help you understand your sleep patterns. </li> <br>
-                    <li> A 24/7 membership support team, here to address any concerns, troubleshoot any issues,  and answer any questions you might have. </li> <br>
-                    <li> Exclusive access to unique fitness and health partnerships, apparel, giveaways, collaborations, and more. </li> <br>
-                    <li> A community of like-minded, health conscious people sharing unique insights and experiences. </li> <br>
-                    <li> Personalized insights to help you become the best, most well-rested version of you. </li> <br> <br>
-                </ul>
-            </div>
-              
+    <!-- Footer -->
+    <footer>
+        <div>&copy; 2025 EarlyBird. All Rights Reserved.</div>
+    </footer>
 
-            <footer><div> &copy; 2025 EarlyBird. All Rights Reserved.</div></footer>
-    </body>
+</body>
 </html>
