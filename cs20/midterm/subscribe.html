@@ -8,7 +8,7 @@
     <!-- Link to main CSS file -->
     <link rel="stylesheet" type="text/css" href="H&F.css">
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts (Only for Body, NOT for Navbar) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700;900&display=swap" rel="stylesheet">
@@ -21,6 +21,11 @@
             margin: 0;
             padding: 0;
             text-align: center;
+        }
+
+        /* Remove any font override for navbar */
+        .topnav, ul#nav, ul#nav li a {
+            font-family: inherit !important; /* Uses the original font from H&F.css */
         }
 
         /* Title Styling */
@@ -126,18 +131,18 @@
 </head>
 <body>
 
-    <!-- Navbar -->
+    <!-- Navbar (No Font Changes) -->
     <div class="topnav">
         <ul id='nav' class='nav'>
             <li class="s1"><a class="start" href="main.html">
                 <img src="Earlybird.png" alt="Earlybird image" width="60px" height="40px"></a>
             </li>
-            <li class="s2"><a class="hname" href="main.html"><strong>EarlyBird</strong></a></li>
+            <li class="s2"><a class="hname" href="main.html"><h1>EarlyBird</h1></a></li>
             <li><a href="why-us.html">Why Us</a></li>
-            <li><a href="#contact">Metrics</a></li>
-            <li><a href="#about">Reviews</a></li>
+            <li><a href="metrics.html">Metrics</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
             <li><a href="subscribe.html">Subscriptions</a></li>
-            <li><a href="#about">Shop</a></li>
+            <li><a href="shop.html">Shop</a></li>
             <li class="conB"><a href="contact.html">Contact Us!</a></li>
         </ul>
     </div>
