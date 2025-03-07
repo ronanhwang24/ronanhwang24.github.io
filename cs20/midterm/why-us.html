@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Us - EarlyBird</title>
+    
+    <!-- Link to main CSS file -->
+    <link rel="stylesheet" type="text/css" href="H&F.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Ensure responsive and readable text */
+        body {
+            font-family: "Lato", sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container for sections */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* Section Styling */
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap; /* Ensures images and text adjust properly */
+        }
+
+        /* Image Styling */
+        .section img {
+            width: 45%;
+            border-radius: 12px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Text Styling */
+        .text {
+            width: 50%;
+            max-width: 500px;
+            text-align: left;
+        }
+
+        .text h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #176D8F;
+            margin-bottom: 10px;
+        }
+
+        .text p {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* Alternating Layout */
+        .section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 900px) {
+            .container {
+                padding: 20px;
+            }
+
+            .section {
+                flex-direction: column !important; /* Forces stacking on mobile */
+                text-align: center;
+                padding: 20px;
+            }
+
+            .section img {
+                width: 90%;
+                max-width: 100%;
+            }
+
+            .text {
+                width: 100%;
+                max-width: 90%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="topnav">
+        <ul id='nav' class='nav'>
+            <li class="s1"><a class="start" href="main.html">
+                <img src="Earlybird.png" alt="Earlybird image" width="60px" height="40px"></a>
+            </li>
+            <li class="s2"><a class="hname" href="main.html"><h1>EarlyBird</h1></a></li>
+            <li><a href="why-us.html">Why Us</a></li>
+            <li><a href="#contact">Metrics</a></li>
+            <li><a href="#about">Reviews</a></li>
+            <li><a href="subscribe.html">Subscriptions</a></li>
+            <li><a href="#about">Shop</a></li>
+            <li class="conB"><a href="contact.html">Contact Us!</a></li>
+        </ul>
+    </div>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="section">
+            <img src="image1.jpg" alt="Overall Why Us">
+            <div class="text">
+                <h2>Overall Why Us</h2>
+                <p>In a fast-paced world where quality sleep is often compromised by responsibilities 
+                and discomfort, EarlyBird addresses the pressing need for better rest with its 
+                innovative mattress topper. By combining advanced sleep-tracking technology and a 
+                uniquely comfortable foam, EarlyBird provides a personalized and comfortable sleep 
+                solution tailored for college students and young adults who seek restorative rest 
+                with valuable sleep insights.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <img src="image2.jpg" alt="Quality Over Quantity">
+            <div class="text">
+                <h2>Quality Over Quantity</h2>
+                <p>EarlyBird prioritizes meaningful rest over simply increasing sleep hours. By 
+                analyzing your unique sleep patterns and recovery needs, it helps you maximize the 
+                quality of your rest, ensuring you wake up feeling refreshed and ready to perform 
+                at your best. With science-backed insights and personalized recommendations, EarlyBird 
+                helps you build better habits for long-term health and productivity.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <img src="image3.jpg" alt="Everyday Matters">
+            <div class="text">
+                <h2>Everyday Matters</h2>
+                <p>Sleep is the foundation of your well-being, influencing everything from mood and 
+                energy to focus and resilience. EarlyBird helps you understand the connection between 
+                your sleep quality and daily happiness, providing actionable insights to improve both. 
+                By prioritizing better rest, you set yourself up for more productive days, better 
+                decision-making, and a greater sense of balance in your everyday life.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <img src="image4.jpg" alt="Take Advantage of Data">
+            <div class="text">
+                <h2>Take Advantage of Data</h2>
+                <p>EarlyBird harnesses the power of data to give you a deeper understanding of your 
+                sleep and daily performance. By tracking key metrics like sleep cycles, wake patterns, 
+                and recovery trends, it delivers personalized insights to help you optimize your 
+                routine. With real-time feedback and science-backed recommendations, EarlyBird 
+                empowers you to make informed decisions that enhance your rest, focus, and overall 
+                well-being.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div>&copy; 2025 EarlyBird. All Rights Reserved.</div>
+    </footer>
+
+</body>
+</html>

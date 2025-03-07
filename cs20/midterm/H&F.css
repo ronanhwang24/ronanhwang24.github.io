@@ -1,6 +1,11 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
 body {
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
     background-color: white;
@@ -12,10 +17,12 @@ body {
 h1 {
     font-size: 25px;
 }
+
 h2 {
     font-family: "Lato", serif;
     font-size: 125px;
 }
+
 footer {
     text-align: center;
     background-color: #333;
@@ -25,116 +32,138 @@ footer {
     color: #9ACAE0;
     font-family: serif, "Lato";
 }
+
 footer div {
-   position: absolute;
-   bottom: 0;
-   width: 100vw;
-   text-align: center;
-}
-.s1,.s2 {
-    margin-left: 0;
-    padding: 0;
-}
-/* Remove padding from links in .s1 and .s2 */
-ul#nav li.s1 a,
-ul#nav li.s2 a {
-    padding: 0;
-}
-ul#nav li.s1,
-ul#nav li.s2 {
-    padding: 0;
-    margin: 0;
-}
-.start:hover {
-    background-color: #333 !important;
-}
-div.nav {
+    width: 100%;
     text-align: center;
 }
-.hname {
-    color: #9ACAE0 !important;
+
+/* Restore Navigation Bar Background */
+.topnav {
+    background-color: #333;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
-.hname:hover {
-    background-color: #333 !important;
-}
+
 ul#nav {
     list-style-type: none;
-    width: 100vw;
-    display: flex; /* Use flexbox for centering */
-    justify-content: flex-start; /* Center items */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     padding: 0;
     margin: 0;
-    height: 70px; /* Set a height for the nav */
-    font-size: 30px;
+    height: 70px;
+    font-size: 20px;
     font-weight: 300;
-    align-items: stretch;
-    /* border: 2px solid red; */
+    align-items: center;
+    background-color: #333; /* Ensure grey bar stays */
 }
 
 ul#nav li {
-    display: flex; /* Make li flex to adjust height */
-    align-items: stretch;
-    margin-left: 5%;
-    height: 100%;
-    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    margin-left: 3%;
 }
 
+/* Navigation links */
 ul#nav li a {
-    display: flex; /* Make links stretch */
+    display: flex;
     align-items: center;
     justify-content: center;
     background-color: #333;
     color: white;
-    padding: 0px 40px;
+    padding: 10px 20px;
     text-decoration: none;
-    height: 100%; /* Fill li height */
+    height: 100%;
+    border-radius: 50px; /* Rounded edges */
+    position: relative;
+    transition: all 0.4s ease-in-out;
 }
 
-ul#nav a:hover {
+/* Hover effect: dying opacity with radial gradient */
+ul#nav li a:hover {
     color: black;
-    background-color: white;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 30%, rgba(255, 255, 255, 0.4) 80%);
+    transition: all 0.4s ease-in-out;
 }
 
-.topnav {
-    background-color: #333;
-    overflow: hidden;
-}
-/* Make the "Contact" button round */
+/* Contact Button */
 .conB a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white !important; /* White background */
-    color: black !important; /* Text color */
-    border-radius: 50px; /* Makes it round */
-    width: 180px; /* Adjust width */
+    background-color: white !important;
+    color: black !important;
+    border-radius: 50px;
+    width: 160px;
     padding: 10px;
     text-align: center;
-    font-size: 18px; /* Adjust font size */
+    font-size: 16px;
     font-weight: bold;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    transition: all 0.3s ease-in-out; /* Smooth hover effect */
-    text-decoration: none; /* Remove underline */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
 }
+
 .conB a:hover {
     background-color: #9ACAE0 !important;
 }
+
+/* Slideshow Wrapper */
 #slides-wrapper {
-    height:800px;
-    width: 100vw;
-    background-color:  #9ACAE0;
     display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 800px;
+    background-color: #9ACAE0; /* Restore Grey-Blue Background */
 }
+
+/* Slideshow */
 #slide {
     flex: 6;
 }
+
+#slide img {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+}
+
+/* Sidebar */
 #sidebar {
     flex: 4;
     text-align: center;
-    font-size: 150px;
-    font-family: "Cookie",sans-serif;
+    font-size: 100px;
+    font-family: "Cookie", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
+/* Responsive Adjustments */
+@media screen and (max-width: 1024px) {
+    #slides-wrapper {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #slide img {
+        height: auto;
+    }
+
+    #sidebar {
+        font-size: 80px;
+        padding: 20px;
+    }
+
+    ul#nav {
+        flex-direction: column;
+        height: auto;
+    }
+
+    ul#nav li {
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+}
