@@ -1,0 +1,203 @@
+<html>
+    <head>
+        <title>EarlyBird</title>
+        <link rel="stylesheet" type = "text/css" href="H&F.css"> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Duru+Sans&family=Kavivanar&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+        <style>
+#isM {display: none;}
+@media (max-width: 600px) {
+    #isM {display: block;}
+    #notM {display: none;}
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+#isM .PackH {
+    font-size: 45px;
+    color: black;
+    text-align: center;
+}
+
+#isM #desc {
+    width: 100vw;
+    height: 600px;
+    position: relative;
+    background-image: url('bed.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#isM .square {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    display: flex;
+    border-radius:50% ;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white; /* White text color inside the bubble */
+    font-size: 10px; /* Adjust font size inside the bubbles */
+    font-family: sans-serif,"Lato" !important;
+}
+#isM .square .dc1,
+#isM .square .dc2,
+#isM .square .dc3,
+#isM .square .dc4 {
+    position: absolute; /* This ensures positioning works */
+}
+
+#isM .dc1 {
+    top: 25%;
+    left: 5%;
+}
+#isM .dc2 {
+    top: 25%;
+    left: 45%;
+}
+#isM .dc3 {
+    bottom: 5%;
+    left: 25%;
+}
+#isM .dc4 {
+    bottom: 5%;
+    left: 65%;
+}
+#isM .dcH {
+    background: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 75px;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    color: #9ACAE0;
+    font-size: 35px;
+}
+
+#notM #desc {
+    width: 100vw;
+    height: 1200px;
+    position: relative;
+    background-image: url('bed.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#notM .square {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white; /* White text color inside the bubble */
+    font-size: 15px; /* Adjust font size inside the bubbles */
+    font-family: sans-serif,"Lato" !important;
+}
+#notM .square .dc1,
+#notM .square .dc2,
+#notM .square .dc3,
+#notM .square .dc4 {
+    position: absolute; /* This ensures positioning works */
+}
+
+#notM .dc1 {
+    top: 15%;
+    left: 5%;
+}
+#notM .dc2 {
+    top: 15%;
+    left: 45%;
+}
+#notM .dc3 {
+    bottom: 5%;
+    left: 25%;
+}
+#notM .dc4 {
+    bottom: 5%;
+    left: 65%;
+}
+#notM .dcH {
+    background: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 150px;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    color: #9ACAE0;
+    font-size: 100px;
+}
+        </style>
+    </head>
+    
+    <div class="topnav">
+        <ul id = 'nav' class = 'nav'>
+        <li class="s1"><a class="start" href="main.html"><img src="Earlybird.png" alt="Earlybird image" width="60px" height="40px"></a></li>
+        <li class="s2"><a class="hname" href="main.html"><h1>EarlyBird</h1></a></li>
+        <li><a href="why-us.html">Why Us</a></li>
+        <li><a href="metrics.html">Metrics</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="subscribe.html">Subscriptions</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li class="conB"><a href="contact.html">Contact Us!</a></li>
+        </ul>
+    </div>
+
+    <div id="isM">
+        <div id="desc">
+            <div class="square dc1"><span>Precision & Quality – <br> Every package is carefully inspected and packed to ensure the highest quality and freshness of yams and jams, 
+                minimizing damage and ensuring customer satisfaction.</span></div>
+            <div class="square dc2"><span>Efficiency & Speed – <br> Orders are packed swiftly and accurately to meet shipping deadlines while maintaining our high standards.</span></div>
+            <div class="square dc3"><span>Hygiene & Safety – <br> We prioritize cleanliness, food safety, and proper handling techniques to maintain the integrity of your products.</span></div>
+            <div class="square dc4"><span>Sustainability & Responsibility – <br> We use eco-friendly packaging materials whenever possible and minimize waste to reduce our environmental footprint.</span></div>
+            <div class="dcH"> We value your Feedback</div>
+        </div>
+        <footer><div> &copy; 2025 EarlyBird. All Rights Reserved.</div></footer>
+          </div>
+          <div id="notM">
+            <div id="desc">
+                <div class="square dc1">
+                    Jessica T. - ⭐⭐⭐⭐⭐ <br>
+                "This mattress topper is super comfortable, but the real magic is in the sleep tracking. 
+                The app gives me insights and recommendations that have truly improved my sleep. 
+                I wake up more refreshed than ever. Worth every penny!"
+                </div>
+                <div class="square dc2">
+                    Daniel M. - ⭐⭐⭐⭐⭐ <br>
+                    "I love how this topper keeps me cool and comfy while tracking my sleep. 
+                    The data helped me tweak my routine, and I've seen a huge difference in how rested I feel. Highly recommend!"
+                </div>
+                <div class="square dc3">
+                    Sarah W. - ⭐⭐⭐⭐⭐ <br>
+                    "Sleep smarter, not harder! The combo of a cozy topper and sleep tracking is genius! 
+                    I've learned so much about my sleep habits, and the insights have helped me improve my rest. Great product!"
+                </div>
+                <div class="square dc4">
+                    Michael R. - ⭐⭐⭐⭐⭐ <br>
+                    "This isn't just a topper—its a sleep upgrade. 
+                    The tracking is super accurate, and the app's tips have actually worked. 
+                    I fall asleep faster and wake up refreshed. Love it!"
+                </div>
+                <div class="dcH"> We value your Feedback</div>
+            </div>
+            <footer><div> &copy; 2025 EarlyBird. All Rights Reserved.</div> </footer>
+            </div>
+
+</html>
+
+
