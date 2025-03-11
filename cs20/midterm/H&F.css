@@ -140,7 +140,7 @@ ul#nav a:hover {
     display: none;
 }
 
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
     .topnav {
         display: none;
     }
@@ -203,7 +203,6 @@ ul#nav a:hover {
         user-select: none;
     }
 
-    /* Dropdown menu */
     .dropdown-menu {
         display: none;
         flex-direction: column;
