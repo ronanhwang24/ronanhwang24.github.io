@@ -136,20 +136,32 @@ ul#nav a:hover {
     align-items: center;
     color: white;
 }
+.mtopnav {
+    display: none;
+}
 
 @media screen and (max-width: 600px) {
+    .topnav {
+        display: none;
+    }
+    .mtopnav {
+        display: block;
+    }
     #slides-wrapper {
         flex-direction: column;
         height: auto;
     }
+    
 
     #slide img {
         height: auto;
+        max-height: 325px;
     }
 
     #sidebar {
-        font-size: 80px;
-        padding: 20px;
+        font-size: 125px;
+        padding-top: 100px;
+        padding-bottom: 100px;
     }
 
 
@@ -158,5 +170,63 @@ ul#nav a:hover {
         font-size: 10px;
         text-align: center;
         width: 100%;
+    }
+    .mnav {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #333;
+        padding: 10px;
+        color: white;
+    }
+
+    .mnav li {
+        padding: 10px;
+    }
+
+    .mnav a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .hname h1 {
+        margin: 0;
+        font-size: 20px;
+    }
+
+    #dropD {
+        cursor: pointer;
+        font-size: 20px;
+        line-height: 1.2;
+        padding: 10px;
+        user-select: none;
+    }
+
+    /* Dropdown menu */
+    .dropdown-menu {
+        display: none;
+        flex-direction: column;
+        background-color: #444;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        width: 150px;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 50;
+        list-style: none;
+    }
+
+    .dropdown-menu a {
+        padding: 10px;
+        text-align: center;
+        color: white;
+        display: block;
+        text-decoration: none;
+    }
+
+    .dropdown-menu a:hover {
+        background-color: #555;
     }
 }
