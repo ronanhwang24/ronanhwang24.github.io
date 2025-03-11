@@ -21,12 +21,9 @@
                 width: 100%;
                 background-attachment: fixed;
                 background-position: top;
-                background-repeat: no-repeat;
                 background-size: cover;
-                position: relative;
                 display: flex;
                 justify-content: center;
-                color: #9ACAE0 !important;
             }
             .title {
                 font-weight: 600;
@@ -34,308 +31,327 @@
                 align-items: center;
                 display: flex;
                 justify-content: center;
-                color: white !important;
+                color: white;
                 font-size: 100px;
-                top: -110px; /* Adjust the value as needed */
+                top: -110px;
+            }
+            .context {
+                text-align: center;
+                padding: 20px;
+                color: rgb(57, 56, 56);
+                background-color: #9ACAE0;
             }
 
-        .context {
-            text-align: center; /* Center-align the text */
-            padding: 20px; /* Optional: Add some padding for better spacing */
-            color: rgb(57, 56, 56);
-            background-color: #9ACAE0;
-        }
-
-        .context h1 {
-            font-size: 40px;
-            margin-bottom: 10px; /* Add some space below the heading */
-        }
-
-        .context p {
-            font-size: 30;
-            font-weight: 500;
-            line-height: 1.5; /* Improve readability */
-            margin-left: 15%;
-            margin-right: 15%;
-        }
-
-        .Section1 {
-        display: flex;
-        justify-content: space-between;
-        width: 80%; 
-        margin: 50px auto;
-        }
-
-        .s1.photo img {
-            height: 850px; /* Set the height to 200px */
-            width: auto; /* Maintain the aspect ratio */
-            margin-top: 0px;
-        }
-
-         li {
-    font-size: 20px; /* Adjust the size as needed */
-    font-weight: normal; /* You can use values like normal, bold, bolder, or a number (100-900) */
-    }
-
-        li strong {
-            font-size: 130px; /* Adjust the size as needed */
-            font-weight: bold; /* Adjust the boldness as needed */
-        }
-
-        .text-boxes {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: 50px;
-        }
-
-        .text-boxes h3{
-            font-size: 40px;
-            margin-left: -180px;
-        }
-        .context h3{
-            font-size: 40px;
-            text-align: center;
-        }
-        .text-box {
-            width: 80%;
-            height: 150px;
-            background-color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid black;
-            border-radius: 15px;
-        }
-        .text-boxes li strong {
-            font-size: 30px; /* Adjust the size as needed */
-            font-weight: bold; /* Adjust the boldness as needed */
-        }
-        
-        .text-boxes li {
-            font-size: 20px; /* Adjust the size as needed */
-            font-weight: normal; /* You can use values like normal, bold, bolder, or a number (100-900) */
-            text-align: center;
-        }
-
-        .shop-now-container {
-            text-align: left; /* Align text to the left */
-            margin-left: 20px; /* Add some margin to the left */
-        }
-
-        .shop-now-container h2 {
-            color: white; /* Title color */
-            font-size: 100px; /* Title font size */
-            margin-bottom: 10px; /* Add some space below the title */
-            margin-top: 300px;
-        }
-
-        .shop-now {
-            background-color: #9ACAE0; /* Button background color */
-            color: white; /* Button text color */
-            padding: 10px 20px; /* Padding for the button */
-            font-size: 30px; /* Font size */
-            border: none; /* Remove default border */
-            border-radius: 25px; /* Make the button rounded */
-            cursor: pointer; /* Change cursor to pointer on hover */
-            text-align: center; /* Center the text */
-            text-decoration: none; /* Remove underline */
-            display: inline-block; /* Inline-block display */
-            margin-top: 10px;
-            }
-
-        .shop-now:hover {
-            background-color: #7AA8C0; /* Darker shade on hover */
-        }
-
-        @media (max-width: 1150px) {
-            .parallax {
-                height: 900px;
-            }
-            .title {
-                font-size: 60px;
-                top: 0px; /* Adjust the value as needed */
-            }
             .context h1 {
-            font-size: 30px;
+                font-size: 40px;
+                margin-bottom: 10px;
             }
 
             .context p {
-                font-size: 20px;
+                font-size: 30;
+                font-weight: 500;
+                line-height: 1.5;
+                margin-left: 15%;
+                margin-right: 15%;
             }
 
-            .text-boxes h3{
-                font-size: 30px;
-                margin-left: -100px;
+            .Section1 {
+                display: flex;
+                justify-content: space-between;
+                width: 80%; 
+                margin: 50px auto;
             }
-            .context h3{
-                font-size: 30px;
-            }
-            .text-boxes li strong {
-            font-size: 30px; /* Adjust the size as needed */
-            font-weight: bold; /* Adjust the boldness as needed */
-        }
-        
-        .text-boxes li {
-            font-size: 15px; /* Adjust the size as needed */
-            font-weight: normal; /* You can use values like normal, bold, bolder, or a number (100-900) */
-        }
 
-        .s1.photo img {
-            height: 600px; /* Set the height to 200px */
-            width: auto; /* Maintain the aspect ratio */
-            margin-top: 50px;
-        }
-        .text-boxes {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: 50px;
-        }
-        .text-box {
-            width: 80%;
-            height: 100px;
-            background-color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid black;
-            border-radius: 15px;
-        }
-        .shop-now-container h2 {
-                font-size: 60px;
-                top: -110px; /* Adjust the value as needed */
-        
-        }
-        .shop-now {
-            background-color: #9ACAE0; /* Button background color */
-            font-size: 20px; /* Font size */
-            margin-top: 10px;
-        }
-    }
-    
-        @media (max-width: 1000px) {
-            .text-boxes li strong {
-            font-size: 20px; /* Adjust the size as needed */
-        }
-        
-        .text-boxes li {
-            font-size: 12px; /* Adjust the size as needed */
-        }
-
-        }
-        
-        @media (max-width: 850px) {
             .s1.photo img {
-                height: 500px; /* Set the height to 200px */
-                margin-top: 120px;
-                margin-right: 0px;
+                height: 850px;
+                width: auto;
+                margin-top: 0px;
             }
+
+            ul {
+                font-size: 20px;
+                font-weight: normal;
+            }
+
+            ul strong {
+                font-size: 130px;
+                font-weight: bold;
+            }
+
             .text-boxes {
                 display: grid;
                 grid-template-columns: repeat(1, 1fr);
                 gap: 50px;
             }
+
+            .text-boxes h3{
+                font-size: 40px;
+                margin-left: -180px;
+            }
+
+            .context h3{
+                font-size: 40px;
+                text-align: center;
+            }
+
             .text-box {
                 width: 80%;
-                height: 100px;
+                height: 150px;
                 background-color: white;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border: 1px solid black;
+                border: 1px solid #333;
                 border-radius: 15px;
             }
-        }
-        
-        @media (max-width: 700px) {
-            .parallax {
-                height: 600px;
-            }
-            .title {
+            .text-boxes ul strong {
                 font-size: 30px;
-                top: 10px; 
+                font-weight: bold;
             }
-            .context h1 {
+            
+            .text-boxes ul {
                 font-size: 20px;
-            }
-            
-            .context p {
-                font-size: 15px;
-                font-weight: 500;
-            }
-            .context h3{
-                font-size: 20px;
-            }
-            .text-boxes h3{
-                font-size: 20px;
-                margin-left: -80px;
-            }
-            
-            .text-boxes li strong {
-                font-size: 20px; /* Adjust the size as needed */
-                font-weight: bold; /* Adjust the boldness as needed */
-            }
-            
-            .text-boxes li {
-                font-size: 10px; /* Adjust the size as needed */
-                font-weight: normal; /* You can use values like normal, bold, bolder, or a number (100-900) */
-            }
-            .s1.photo img {
-                height: 350px; /* Set the height to 200px */
-                margin-top: 120px;
-                margin-right: 0px;
-            }
-            
-            .shop-now-container h2 {
-                font-size: 30px;
-            }
-            .shop-now {
-            font-size: 10px; /* Font size */
-    
-            }
-        }
-        
-        @media (max-width: 500px) {
-            .text-boxes li strong {
-                font-size: 14px; /* Adjust the size as needed */
-                font-weight: bold; /* Adjust the boldness as needed */
-            }
-            .text-boxes h3{
-                font-size: 15px;
-                margin-left: 0px;
-            }            
-            .context h3{
-                font-size: 15;
+                font-weight: normal;
+                text-align: center;
             }
 
-            .text-boxes li {
-                font-size: 8px; /* Adjust the size as needed */
+            .shop-now-container {
+                text-align: left;
+                margin-left: 20px;
             }
-            .s1.photo img {
-                height: 300px; /* Set the height to 200px */
+
+            .shop-now-container h2 {
+                color: white;
+                font-size: 100px;
+                margin-bottom: 10px;
+                margin-top: 300px;
             }
-            .text-boxes {
-            gap: 20px;
-        }
-        }
-        @media (max-width: 350px) {
-            .text-boxes h3{
+
+            .shop-now {
+                background-color: #9ACAE0;
+                color: white; 
+                padding: 10px 20px;
+                font-size: 30px; 
+                border: none; 
+                border-radius: 25px;
+                cursor: pointer; 
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                margin-top: 10px;
+            }
+
+            .shop-now:hover {
+                background-color: #7AA8C0; 
+            }
+
+            @media (max-width: 1150px) {
+                .parallax {
+                    height: 900px;
+                }
+
+                .title {
+                    font-size: 60px;
+                    top: 0px;
+                }
+
+                .context h1 {
+                    font-size: 30px;
+                }
+
+                .context p {
+                    font-size: 20px;
+                }
+
+                .text-boxes h3 {
+                    font-size: 30px;
+                    margin-left: -100px;
+                }
+
+                .context h3{
+                    font-size: 30px;
+                }
+                
+                .text-boxes ul strong {
+                    font-size: 30px;
+                    font-weight: bold;
+                }
+            
+                .text-boxes ul {
+                    font-size: 15px; 
+                    font-weight: normal;
+                }
+
+                .s1.photo img {
+                    height: 600px;
+                    width: auto;
+                    margin-top: 50px;
+                }
+                
+                .text-boxes {
+                    display: grid;
+                    grid-template-columns: repeat(1, 1fr);
+                    gap: 50px;
+                }
+
+                .text-box {
+                    width: 80%;
+                    height: 100px;
+                    background-color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid #333;
+                    border-radius: 15px;
+                }
+                .shop-now-container h2 {
+                        font-size: 60px;
+                        top: -110px;
+                
+                }
+                .shop-now {
+                    background-color: #9ACAE0;
+                    font-size: 20px;
+                    margin-top: 10px;
+                }
+           }
+        
+            @media (max-width: 1000px) {
+                .text-boxes ul strong {
+                    font-size: 20px; 
+                }
+            
+                .text-boxes ul {
+                    font-size: 12px; 
+                }
+            }
+            
+            @media (max-width: 850px) {
+                .s1.photo img {
+                    height: 500px;
+                    margin-top: 120px;
+                    margin-right: 0px;
+                }
+                
+                .text-boxes {
+                    display: grid;
+                    grid-template-columns: repeat(1, 1fr);
+                    gap: 50px;
+                }
+                
+                .text-box {
+                    width: 80%;
+                    height: 100px;
+                    background-color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid #333;
+                    border-radius: 15px;
+                }
+            }
+            
+            @media (max-width: 700px) {
+                
+                .parallax {
+                    height: 600px;
+                }
+                
+                .title {
+                    font-size: 30px;
+                    top: 10px; 
+                }
+                
+                .context h1 {
+                    font-size: 20px;
+                }
+                
+                .context p {
+                    font-size: 15px;
+                    font-weight: 500;
+                }
+                
+                .context h3{
+                    font-size: 20px;
+                }
+                
+                .text-boxes h3{
+                    font-size: 20px;
+                    margin-left: -80px;
+                }
+                
+                .text-boxes ul strong {
+                    font-size: 20px; 
+                    font-weight: bold;
+                }
+                
+                .text-boxes ul {
+                    font-size: 10px; 
+                    font-weight: normal;
+                }
+
+                .s1.photo img {
+                    height: 350px; 
+                    margin-top: 120px;
+                    margin-right: 0px;
+                }
+                
+                .shop-now-container h2 {
+                    font-size: 30px;
+                }
+                .shop-now {
                 font-size: 10px;
-                margin-left: 0px;
+                }
             }
-            .context h3{
-                font-size: 10;
+            
+            @media (max-width: 500px) {
+                .text-boxes ul strong {
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+
+                .text-boxes h3{
+                    font-size: 15px;
+                    margin-left: 0px;
+                }            
+                
+                .context h3{
+                    font-size: 15;
+                }
+
+                .text-boxes ul {
+                    font-size: 8px;
+                }
+                
+                .s1.photo img {
+                    height: 300px;
+                }
+
+                .text-boxes {
+                    gap: 20px;
+                }
             }
-            .s1.photo img {
-                height: 200px; /* Set the height to 200px */
+            @media (max-width: 350px) {
+                .text-boxes h3{
+                    font-size: 10px;
+                    margin-left: 0px;
+                }
+
+                .context h3{
+                    font-size: 10;
+                }
+
+                .s1.photo img {
+                    height: 200px;
+                }
+
+                .text-boxes {
+                    gap: 10px;
+                }
             }
-            .text-boxes {
-            gap: 10px;
-        }
-        }
         </style>
     </head>
     <body>
-        
         <header></header>
         <div class="topnav">
             <ul id = 'nav' class = 'nav'>
@@ -349,8 +365,8 @@
             <li class="conB"><a href="contact.html">Contact Us!</a></li>
             </ul>
         </div>
-            <!-- mobile nav -->
-            <div class="mtopnav">
+        <!-- mobile nav -->
+        <div class="mtopnav">
             <ul id = 'mnav' class = 'mnav'>
             <li class="s1"><a class="start" href="main.html"><img src="Earlybird.png" alt="Earlybird image" width="60px" height="40px"></a></li>
             <li class="s2"><a class="hname" href="main.html"><h1>EarlyBird</h1></a></li>
@@ -364,12 +380,26 @@
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="contact.html">Contact Us!</a></li>
             </div>
+            <script>
+                $(document).ready(function () {
+                    $("#dropD").click(function () {
+                        $("#dropdownMenu").toggle();
+                    });
+        
+                    // Close menu when clicking outside
+                    $(document).click(function (event) {
+                        if (!$(event.target).closest("#dropD, #dropdownMenu").length) {
+                            $("#dropdownMenu").hide();
+                        }
+                    });
+                });
+            </script>
+        </div>
         <div class="parallax">
             <div class="title">
                 <p>What EarlyBird Measures</p>
             </div>
         </div>
-
         <div class = "context">
             <h1>Track Every Step of Your Health & Fitness Journey</h1>
             <p>From sleep to stress, and steps to recovery, EarlyBird captures everything to coach you towards your best performance.</p>
@@ -380,19 +410,19 @@
                         <h3>What do we track?</h3>            
                 
                         <div class="text-box">
-                            <li><strong>Sleep quality:</strong> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                We give you sleep quality information based on your time in deep sleep, light sleep,<br> REM sleep, and awake time</li>
+                            <ul><strong>Sleep quality:</strong> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                We give you sleep quality information based on your time in deep sleep, light sleep,<br> REM sleep, and awake time</ul>
                         </div>
-                        <div class="text-box"><li><strong>Heart Rate Variability:</strong> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            A key indicator of recovery and stress levels, showing how well your body adapts to daily challenges.</li>
-                        </div>
-                        <div class="text-box">
-                            <li><strong>Stress Levels:</strong> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            We help you identify when your body is under stress and how to manage it for better performance.</li>
+                        <div class="text-box"><ul><strong>Heart Rate Variability:</strong> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            A key indicator of recovery and stress levels, showing how well your body adapts to daily challenges.</ul>
                         </div>
                         <div class="text-box">
-                            <li><strong>Recovery:</strong> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                Get personalized recommendations to help you rest and recover based on your exertion levels.</li>
+                            <ul><strong>Stress Levels:</strong> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            We help you identify when your body is under stress and how to manage it for better performance.</ul>
+                        </div>
+                        <div class="text-box">
+                            <ul><strong>Recovery:</strong> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                Get personalized recommendations to help you rest and recover based on your exertion levels.</ul>
                         </div>
                                 
                     </div> 
@@ -401,13 +431,15 @@
                     </div>
                 </div>
             <h3>By understanding the interplay between sleep, stress, recovery, and physical exertion, EarlyBird empowers you to make smarter decisions about your health and fitness.</h3>
-        </div>
-                            
-            <div class="parallax">
-                <div class="shop-now-container">
-                    <h2>The EarlyBird gets the worm</h2>
-                    <button class="shop-now" onclick="location.href='shop.html'">Shop Now!</button>
-                </div>
+        </div>                      
+        <div class="parallax">
+            <div class="shop-now-container">
+                <h2>The EarlyBird gets the worm</h2>
+                <button class="shop-now" onclick="location.href='ronanhwang24.github.io/cs20/midterm/metrics.html'">Shop Now!</button>
             </div>
-</body>
+        </div>
+        <footer>
+            <p>&copy; 2025 Early Bird. All rights reserved.</p>
+        </footer>
+    </body>
 </html>
