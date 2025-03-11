@@ -140,7 +140,7 @@ ul#nav a:hover {
     display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
     .topnav {
         display: none;
     }
@@ -155,7 +155,7 @@ ul#nav a:hover {
 
     #slide img {
         height: auto;
-        max-height: 325px;
+        max-height: 400px;
     }
 
     #sidebar {
