@@ -10,7 +10,7 @@
 
          <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <style> 
-
+            /* Styling Contact Us title*/
              div#title {
                 margin-top: 50px;
                 margin-left: auto;
@@ -29,7 +29,7 @@
                 background-color: #9ACAE0;
             }
 
-
+             /* Styling form item*/
              div#form {
                 display: block;
                 text-align: left;
@@ -49,12 +49,13 @@
                 
             } 
 
-
+         /* Styling mode buttons*/
         form input[type="radio"] {
             width: auto;
             margin-right: 5px;
         }
 
+         /* Styling input and select buttons*/
         form input, form select {
             
             margin: 5px;
@@ -63,7 +64,8 @@
             font-size: 16px;
         }
 
-            form input[type="submit"] {
+         /* Styling submit button*/
+        form input[type="submit"] {
             width: 100px;
             background-color: #2B7A99;
             color: #fff;
@@ -74,14 +76,11 @@
             transition: background 0.3s ease;
         }
 
+        /* Adding hover to submit button*/
         form input[type="submit"]:hover {
             background-color: #4DA8DA;
         }
-            /* footer {
-                position: absolute;
-                bottom: 0;
-                width: 100vw;
-            } */
+            
         </style>
     </head>
     <body>
@@ -146,6 +145,7 @@
                     <label for="emailMe"> Email</label><br> <br>
                 <label for="issue">Issue:</label> <br>
                     <select name="issues">
+                        <!--  Doesn't let you select "choose an option" option -->
                         <option selected = "selected" disabled = "disabled" value="choose">Choose an option</option>
                         <option value="mattresses" id = "mattress">Mattresses</option>
                         <option value="subscription" id = "subscription">Subscription</option>
@@ -158,6 +158,7 @@
         </div>
         
         <script> 
+            // Makes sure all vals are filled in successive order before form is submitted
             onsubmit = function() {
                 nameVal = document.getElementById("name").value
                 if(nameVal == "") {
@@ -195,6 +196,7 @@
                     alert("Please give us some more information as to how we can help you.")
                     return false;
                 }
+                //Alert when everything is successfully filled out and submit is clicked
                 alert("Thank you for contacting our team. We will reach out to you within 1-2 business days. ")
                 return true;
             }
