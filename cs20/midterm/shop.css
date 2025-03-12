@@ -11,15 +11,15 @@ body {
     text-align: center;
 }
 
-/* .shop h2 {
+ .shop h2 {
     font-size: 55px;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
+/*     margin-top: 50px; */
+/*     margin-left: auto; */
+/*     margin-right: auto; */
+    /*margin-bottom: 30px; */
     font-weight: 450;
 }
- */
+ 
 .product-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
