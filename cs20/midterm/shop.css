@@ -12,12 +12,12 @@ body {
 }
 
  .shop h2 {
-    font-size: 55px;
+    font-size: 55px !important;
 /*     margin-top: 50px; */
 /*     margin-left: auto; */
 /*     margin-right: auto; */
     /*margin-bottom: 30px; */
-    font-weight: 450;
+    font-weight: 450 !important;
 }
  
 .product-container {
