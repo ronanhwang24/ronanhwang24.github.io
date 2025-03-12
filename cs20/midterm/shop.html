@@ -167,48 +167,48 @@
         </style>
     </head>
     <body>
-                <div class="topnav">
+        <div class="topnav">
             <ul id = 'nav' class = 'nav'>
-            <li class="s1"><a class="start" href="main.html"><img src="Earlybird.png" alt="Earlybird image" width="60px" height="40px"></a></li>
-            <li class="s2"><a class="hname" href="main.html"><h1>EarlyBird</h1></a></li>
-            <li><a href="why-us.html">Why Us</a></li>
-            <li><a href="metrics.html">Metrics</a></li>
-            <li><a href="reviews.html">Reviews</a></li>
-            <li><a href="subscribe.html">Subscriptions</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li class="conB"><a href="contact.html">Contact Us!</a></li>
+                <li class="s1"><a class="start" href="main.html"><img src="Earlybird.png" alt="Earlybird image" width="60px" height="40px"></a></li>
+                <li class="s2"><a class="hname" href="main.html"><h1>EarlyBird</h1></a></li>
+                <li><a href="why-us.html">Why Us</a></li>
+                <li><a href="metrics.html">Metrics</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="subscribe.html">Subscriptions</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li class="conB"><a href="contact.html">Contact Us!</a></li>
             </ul>
         </div>
             <!-- mobile nav -->
-            <div class="mtopnav">
+        <div class="mtopnav">
             <ul id = 'mnav' class = 'mnav'>
             <li class="s1"><a class="start" href="main.html"><img src="Earlybird.png" alt="Earlybird image" width="60px" height="40px"></a></li>
             <li class="s2"><a class="hname" href="main.html"><h1>EarlyBird</h1></a></li>
             <li id="dropD">☰</li>
             </ul>
             <div id="dropdownMenu" class="dropdown-menu">
-                <li><a href="why-us.html">Why Us</a></li>
-                <li><a href="metrics.html">Metrics</a></li>
-                <li><a href="reviews.html">Reviews</a></li>
-                <li><a href="subscribe.html">Subscriptions</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="contact.html">Contact Us!</a></li>
+                    <li><a href="why-us.html">Why Us</a></li>
+                    <li><a href="metrics.html">Metrics</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="subscribe.html">Subscriptions</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact.html">Contact Us!</a></li>
             </div>
             <script>
-                $(document).ready(function () {
-                    $("#dropD").click(function () {
-                        $("#dropdownMenu").toggle();
+                    $(document).ready(function () {
+                        $("#dropD").click(function () {
+                            $("#dropdownMenu").toggle();
+                        });
+            
+                        // Close menu when clicking outside
+                        $(document).click(function (event) {
+                            if (!$(event.target).closest("#dropD, #dropdownMenu").length) {
+                                $("#dropdownMenu").hide();
+                            }
+                        });
                     });
-        
-                    // Close menu when clicking outside
-                    $(document).click(function (event) {
-                        if (!$(event.target).closest("#dropD, #dropdownMenu").length) {
-                            $("#dropdownMenu").hide();
-                        }
-                    });
-                });
             </script>
-            </div>
+        </div>
         <div class="shop">
             <h2>Shop</h2>
             <h3>Enhance your sleep with the EarlyBird Mattress Topper, designed for ultimate comfort, support, and smart sleep tracking.</h3>
