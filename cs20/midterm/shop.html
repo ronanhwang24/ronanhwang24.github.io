@@ -1,0 +1,362 @@
+<html>
+    <head>
+        <title>Early Bird</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type = "text/css" href="H&F.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Duru+Sans&family=Kavivanar&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <style>
+            p {
+                font-weight: 300;
+            }
+
+            body {
+                background-color: #9ACAE0;
+                color: #333;
+            }
+
+            .shop h2, .shop h3 {
+                text-align: center;
+            }
+
+            .product-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+                justify-content: center;
+                padding: 20px;
+            }
+
+            .product {
+                background: white;
+                border-radius: 10px;
+                text-align: center;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                padding: 16px;
+                position: relative;
+            }
+
+            .product img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+
+            .product h3 {
+                margin: 10px 0;
+            }
+
+            .price {
+                font-weight: bold;
+                font-size: 18px;
+                color: #333;
+            }
+
+            .flex-container {
+                display: flex;
+            }
+
+            .subscribe-section, .zipcode-section, .order-summary {
+                text-align: center;
+                margin: 20px 0;
+                width: 33%;
+            }
+
+            .subscribe-section h3, .zipcode-section h3, .order-summary h3 {
+                margin-bottom: 10px;
+            }
+
+            .subscribe-section label {
+                display: inline-block;
+                margin: 10px 5px;
+                font-size: 18px;
+                font-weight: 300;
+            }
+
+            .zipcode-section {
+                width: 33%;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .zipcode-section h3 {
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+
+            .zipcode-section .input-group {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            .zipcode-section input[type="text"], .zipcode-section button,
+            .order-summary input[type="tel"], .order-summary button {
+                font-size: 16px;
+                margin: 10px;
+                padding: 10px;
+                width: 80%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .message {
+                font-size: 18px;
+                margin-top: 10px;
+            }
+
+            .message.success {
+                color: green;
+            }
+
+            .message.error {
+                color: red;
+            }
+
+            .order-summary {
+                padding: 16px;
+                text-align: center; /* Aligns all text to the center */
+                display: flex;
+                flex-direction: column; /* Arranges children in a column */
+                align-items: center; /* Centers children horizontally */
+                width: 33%;
+                margin: 0 auto; /* Centers the order-summary div itself */
+            }
+
+            .order-summary p {
+                margin: 8px 0;
+                text-align: center;
+            }
+
+            .cart-controls {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            .cart-controls button {
+                background-color: #333;
+                color: white;
+                padding: 5px 12px;
+                margin: 0 5px;
+                font-size: 16px;
+            }
+
+            .cart-controls button:hover {
+                background-color: #9ACAE0;
+            }
+
+            @media (max-width: 800px) {
+                .flex-container {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .subscribe-section, .zipcode-section, .order-summary {
+                    width: 80%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="topnav">
+            <ul id="nav" class="nav">
+                <li class="s1"><a class="start" href="main.html"><img src="Earlybird.png" alt="Earlybird image" width="60px" height="40px"></a></li>
+                <li class="s2"><a class="hname" href="main.html"><h1>Early Bird</h1></a></li>
+                <li><a href="#about">Why Us</a></li>
+                <li><a href="#reviews">Metrics</a></li>
+                <li><a href="#about">Reviews</a></li>
+                <li><a href="#contact">Subscriptions</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li class="conB"><a href="contact.html">Contact Us!</a></li>
+            </ul>
+        </div>
+        <div class="shop">
+            <h2>Shop</h2>
+            <h3>Enhance your sleep with the EarlyBird Mattress Topper, designed for ultimate comfort, support, and smart sleep tracking.</h3>
+            <div class="product-container">
+                <div class="product" data-price="149.99">
+                    <img src="twinbed.jpg" alt="Twin XL">
+                    <h3>Twin XL</h3>
+                    <p class="price">$149.99</p>
+                    <div class="cart-controls">
+                        <button class="decrease">-</button>
+                        <span class="quantity">0</span>
+                        <button class="increase">+</button>
+                    </div>
+                </div>
+            
+                <div class="product" data-price="169.99">
+                    <img src="fullbed.jpg" alt="Full">
+                    <h3>Full</h3>
+                    <p class="price">$169.99</p>
+                    <div class="cart-controls">
+                        <button class="decrease">-</button>
+                        <span class="quantity">0</span>
+                        <button class="increase">+</button>
+                    </div>
+                </div>
+            
+                <div class="product sold-out" data-price="199.99">
+                    <img src="queenbed.jpg" alt="Queen XL">
+                    <h3>Queen</h3>
+                    <p class="price">$199.99</p>
+                    <div class="cart-controls">
+                        <button class="decrease">-</button>
+                        <span class="quantity">0</span>
+                        <button class="increase">+</button>
+                    </div>
+                </div>
+            
+                <div class="product sold-out" data-price="224.99">
+                    <img src="kingbed.jpg" alt="King">
+                    <h3>King</h3>
+                    <p class="price">$224.99</p>
+                    <div class="cart-controls">
+                        <button class="decrease">-</button>
+                        <span class="quantity">0</span>
+                        <button class="increase">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-container">
+            <div class="subscribe-section">
+                <h3>Include EarlyBird subscription?</h3>
+                <label> <input type="radio" name="subscribe" value="yes"> Yes ($4.99) </label>
+                <label> <input type="radio" name="subscribe" value="no" checked> No </label>
+            </div>
+            <div class="zipcode-section">
+                <h3>Enter Your Zip Code</h3>
+                <p>Please enter your zip code for the address: This will help us estimate your shipping cost</p>
+                <div class="input-group">
+                    <input type="text" id="zipcode" placeholder="Enter your zip code">
+                    <button id="zipcode-submit">Enter</button>
+                </div>
+                <h4 id="city-name" class="message"></h4>
+            </div>
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <p>Order Subtotal: $<span id="subtotal">0.00</span></p>
+                <p>Estimated Shipping: $<span id="shipping">0.00</span></p>
+                <p>Estimated Tax (6.25%): $<span id="tax">0.00</span></p>
+                <p><strong>Estimated Order Total: $<span id="total">0.00</span></strong></p>
+                <input type="tel" id="phone" placeholder="Enter your phone number">
+                <button id="purchase">Purchase</button>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2025 Early Bird. All rights reserved.</p>
+        </footer>
+        <script>
+            //Get user input zip code value and see if it exists in freeshipping.json
+            document.getElementById('zipcode-submit').addEventListener('click', function() {
+                zipCode = document.getElementById('zipcode').value;
+                fetch('https://ronanhwang24.github.io/cs20/midterm/freeshipping.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        zipcodes = data.zipcodes;
+                        messageElement = document.getElementById('city-name');
+                        shipping = 0;
+                        //If user inpuuted zipcode does exist in .json give free shipping
+                        if (zipcodes.includes(zipCode)) {
+                            messageElement.textContent = 'Since you live in Medford, you get free shipping!';
+                            messageElement.classList.add('success');
+                            messageElement.classList.remove('error');
+                            shipping = 0;
+                        //Otherwise charge shipping amount
+                        } else {
+                            messageElement.textContent = 'Zipcode invalid for free shipping.';
+                            messageElement.classList.add('error');
+                            messageElement.classList.remove('success');
+                            shipping = 9.99;
+                        }
+                        //Update shipping price
+                        document.getElementById('shipping').textContent = shipping;
+                        updateOrderSummary(shipping);
+                    });
+            });
+
+            //Handle quantity changes for each product
+            document.querySelectorAll('.cart-controls').forEach(control => {
+                quantitySpan = control.querySelector('.quantity');
+                quantity = parseInt(quantitySpan.textContent);
+
+                //If - is clicked on quantity values, subtract and update final price
+                control.querySelector('.decrease').addEventListener('click', () => {
+                    if (quantity > 0) {
+                        quantity--;
+                        quantitySpan.textContent = quantity;
+                        updateOrderSummary();
+                    }
+                });
+
+                //If + is clicked on quantity values, add and update final price
+                control.querySelector('.increase').addEventListener('click', () => {
+                    quantity++;
+                    quantitySpan.textContent = quantity;
+                    updateOrderSummary();
+                });
+            });
+
+            //Update final quantity and show user
+            function updateOrderSummary(shipping) {
+                subtotal = 0;
+                document.querySelectorAll('.product').forEach(product => {
+                    price = parseFloat(product.getAttribute('data-price'));
+                    quantity = parseInt(product.querySelector('.quantity').textContent);
+                        subtotal += price * quantity;
+                });
+
+                tax = subtotal * 0.0625;
+
+                //Check subscription status
+                subscribe = document.querySelector('input[name="subscribe"]:checked').value;
+                subscriptionFee = subscribe === 'yes' ? 4.99 : 0;
+
+                // Ensure shipping is a number
+                shipping = parseFloat(shipping);
+                if (isNaN(shipping)) {
+                    shipping = 0;
+                }
+
+                //Find total and print out all values to 2 decimals
+                total = subtotal + tax + subscriptionFee + shipping;
+                document.getElementById('subtotal').textContent = subtotal.toFixed(2);
+                document.getElementById('tax').textContent = tax.toFixed(2);
+                document.getElementById('total').textContent = total.toFixed(2);
+            }
+
+            //If subscription status is changed
+            document.querySelectorAll('input[name="subscribe"]').forEach(radio => {
+                radio.addEventListener('change', () => updateOrderSummary(0));
+            });
+
+            //Check if phone number entered is valid
+            document.getElementById('purchase').addEventListener('click', () => {
+                phone = document.getElementById('phone').value;
+                phonePattern = /^[0-9]{10}$/;
+                if (!phonePattern.test(phone)) {
+                    alert('Please enter a valid 10-digit phone number.');
+                    return;
+                }
+
+                //Add subtotal and phone number to querystring
+                subtotal = document.getElementById('subtotal').textContent;
+                queryString = `?phone=${phone}&subtotal=${subtotal}`;
+
+                //Alert user that purchase was successful and add to querystring
+                alert('Purchase was successful! Please check your phone for a phone call or a text about your purchase.');
+                window.location.href = `purchase.html${queryString}`;
+            });
+        </script>
+    </body>
+</html>
