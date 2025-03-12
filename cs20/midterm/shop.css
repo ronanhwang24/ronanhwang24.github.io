@@ -11,13 +11,13 @@ body {
     text-align: center;
 }
 
- .shop h2 {
+/*  .shop h2 {
     font-size: 65px !important;
     margin-top: 50px !important; 
     margin-bottom: 30px !important;
     font-weight: 450 !important;
 }
- 
+  */
 .product-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
