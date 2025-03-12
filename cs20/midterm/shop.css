@@ -13,8 +13,8 @@ body {
 
  .shop h2 {
     font-size: 65px !important;
-    margin-top: 50px; 
-    margin-bottom: 30px;
+    margin-top: 50px !important; 
+    margin-bottom: 30px !important;
     font-weight: 450 !important;
 }
  
