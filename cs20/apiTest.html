@@ -1,0 +1,49 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baseball Teams</title>
+    <style>
+        h1 {
+            color: black;
+            text-decoration: underline;
+        }
+        .teams-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .teams-table td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Baseball Teams</h1>
+    <table class="teams-table" id="teamsTable"></table>
+
+    <script>
+        // Fetch MLB teams data from the MLB Stats API
+        fetch("https://statsapi.mlb.com/api/v1/teams")
+            .then(response => response.json())
+            .then(data => {
+                const teamsTable = document.getElementById("teamsTable");
+                const teams = data.teams;
+                const teamsPerRow = 5;
+
+                // Create rows and add teams in a grid format
+                for (let i = 0; i < teams.length; i += teamsPerRow) {
+                    const row = document.createElement("tr");
+                    for (let j = i; j < i + teamsPerRow && j < teams.length; j++) {
+                        const cell = document.createElement("td");
+                        cell.textContent = `${teams[j].name} (${teams[j].abbreviation})`;
+                        row.appendChild(cell);
+                    }
+                    teamsTable.appendChild(row);
+                }
+            })
+            .catch(error => console.error("Error fetching data:", error));
+    </script>
+</body>
+</html>
