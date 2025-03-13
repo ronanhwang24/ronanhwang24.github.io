@@ -1,7 +1,6 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baseball Teams</title>
     <style>
         h1 {
@@ -25,7 +24,7 @@
 
     <script>
         // Fetch MLB teams data from the MLB Stats API
-        fetch("https://statsapi.mlb.com/api/v1/teams")
+        fetch("https://statsapi.mlb.com/api/v1/teams?sportId=1")
             .then(response => response.json())
             .then(data => {
                 const teamsTable = document.getElementById("teamsTable");
