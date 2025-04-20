@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Search</title>
+</head>
+<body>
+    <h1>Search for Stock Information</h1>
+    <form action="/process" method="GET">
+        <input type="text" name="query" required>
+        <br><br>
+        <input type="radio" name="search_type" value="ticker" checked> Ticker Symbol
+        <input type="radio" name="search_type" value="company"> Company Name
+        <br><br>
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
