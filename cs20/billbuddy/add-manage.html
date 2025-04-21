@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add/Manage Page</title>
+  <link rel="stylesheet" href="add-manage.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Add/Manage</h1>
+    <nav>
+      <ul>
+        <li><a href="#upcoming">Upcoming</a></li>
+        <li><a href="#view">View</a></li>
+        <li><a href="#add-manage">Add/Manage</a></li>
+        <li><a href="#contact-us">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div id="upcoming-payments">
+      <label for="select-database">Select Database:</label>
+      <select id="select-database">
+        <!-- Options will be populated dynamically -->
+      </select>
+    </div>
+    <div id="confirmation">
+      <button id="yes-button">Update</button>
+      <button id="no-button">Add New</button>
+    </div>
+    <div id="payments-list">
+      <!-- Payment items will be listed here -->
+    </div>
+  </div>
+  <script src="add-manage.js"></script>
+</body>
+</html>
