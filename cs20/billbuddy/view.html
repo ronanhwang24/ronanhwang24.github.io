@@ -10,15 +10,65 @@
         height: 50px;
         margin-bottom: 10px;
     }
+
+    nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  nav ul li {
+    display: inline;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #2e7d32;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    background-color: #e8f5e9;
+  }
+
+  #container {
+    width: 5000px;
+  }
+
+  .container {
+    background-color: white;
+    padding: 3rem; /* Increased padding */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 95%; /* Increased width */
+    max-width: 500px; /* Increased max-width */
+    text-align: center;
+  }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>View Your Spending</h1>
+
+    <nav>
+        <ul>
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="view.html">View</a></li>
+          <li><a href="add-manage.html">Add/Manage</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    <br>
     <p>Select a timeframe to view your spending summary:</p>
-    <button onclick="alert(`viewing spending by week`)">This Week</button>
-    <button onclick="alert(`viewing spending by month`)">This Month</button>
-    <button onclick="alert(`viewing spending by year`)">This Year</button>
+    <button onclick=location.href="weekChart.html">This Week</button>
+    <button onclick=location.href="monthChart.html">This Month</button>
+    <button onclick=location.href="yearChart.html">This Year</button>
+
   </div>
 
 </body>

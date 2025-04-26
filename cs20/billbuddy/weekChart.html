@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Yearly Spending</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <h1>Spending This Year</h1>
+    <canvas id="yearChart" width="300" height="200"></canvas>
+    <button onclick=location.href="view.html">Back</button>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('yearChart').getContext('2d');
+    const yearChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Dollars Spent',
+          data: [1, 2, 3, 4, 5, 6, 7],
+          backgroundColor: '#66bb6a'
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
