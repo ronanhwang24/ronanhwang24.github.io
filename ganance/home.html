@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+    <title>Ganance Summer Internship</title>
+    <link rel='stylesheet' href='home.css'>
+    <link rel="stylesheet" href="nav.css">
+
+
+</head>
+<body>
+<div class="parallax">
+    <!-- Nav Bar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="home.html"><img src="ganance_logo.avif" alt="Home" class="logo"></a>
+        </div>
+        <div class="nav-center">
+            <a href= "demo.html">Demo</a>
+            <!-- Dropdown Menu -->
+            <div class="dropdown">
+                <button class="dropbtn">More ▾</button>
+                <div class="dropdown-content">
+                    <a href="documentation.html">Documentation</a>
+                    <a href="https://github.com/ronanhwang24/ronanhwang24.github.io/tree/main/ganance" target="_blank">GitHub</a>
+                    <a href="other-files.html">Other Files</a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-right">
+            <!-- Resume Link -->
+            <a href="Hwang,Ronan_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                <img src="resume.png" alt="Resume" class="nav-icon">
+            </a>
+            <!-- LinkedIn Link -->
+            <a href="https://www.linkedin.com/in/ronanhwang/" target="_blank">
+                <img src="linkedin.png" alt="LinkedIn" class="nav-icon">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Title in Parallax -->
+    <div class="parallax-title">
+        <h1>2025 Summer Internship<br>Ganance</h1>
+    </div>
+</div>
+
+<!-- Image Gallery Section -->
+<section class="gallery-section">
+  <h1>Photo Gallery from Ganance Internship</h1>
+  <div class="gallery">
+    <div class="gallery-item" onclick="toggleDescription(this)">
+      <h2>July 11th 2025, 10am</h2>
+      <img src="gallery1.JPG" alt="Flight">
+      <p class="photo-description">On the plane to Chicago from Newark!</p>
+    </div>
+    <div class="gallery-item" onclick="toggleDescription(this)">
+      <h2>July 11th, 3pm</h2>
+      <img src="gallery2.jpg" alt="Setup">
+      <p class="photo-description">Helping set up for the Chicago Watches & EDC Showcase at MHhb.</p>
+    </div>
+    <div class="gallery-item" onclick="toggleDescription(this)">
+      <h2>July 11th 2025, 4:30pm</h2>
+      <img src="gallery3.jpg" alt="Watches Showcase">
+      <p class="photo-description">Working for the Chicago Watches & EDC Showcase at MHhb</p>
+    </div>
+    <div class="gallery-item" onclick="toggleDescription(this)">
+      <h2>July 12th, 11am</h2>
+      <img src="gallery4.JPG" alt="Testing">
+      <p class="photo-description">Some quality control and testing done on the product that arrived in early July to ensure it can be shipped to consumers in August.</p>
+    </div>
+    <div class="gallery-item" onclick="toggleDescription(this)">
+      <h2>July 12th, 7pm</h2>
+      <img src="gallery5.JPG" alt="Soldier Field">
+      <p class="photo-description">After some deep dish pizza, went to Soldier Field with Alex and Tyler to watch the Chicago Fire!</p>
+    </div>
+  </div>
+</section>
+
+<!-- Demo Section -->
+<section class="section" id="demo">
+  <h1>Incase I need #1</h1>
+  <p>Information about the demo goes here. You can describe features, functionality, or user interaction.</p>
+</section>
+
+<!-- More Section -->
+<section class="section" id="more">
+  <h1>Incase I need #2</h1>
+  <p>This section can contain more details, background information, or media content.</p>
+</section>
+
+<!-- Placeholder for Chicago Trip -->
+<section class="section" id="chicago">
+  <h1>Incase I need #2</h1>
+  <p>Coming soon: Photos and description of the Chicago weekend trip.</p>
+</section>
+
+<!-- Thank You Section -->
+<section class="section" id="thanks">
+  <h1>Huge Thanks</h1>
+  <p>Thank you to Alex, Tyler and everyone I was able to meet at Mhub... etc. Also thank you again to phillip and Rehanna for giving me the chance</p>
+</section>
+
+<!-- Toggle Description Script -->
+<script>
+  function toggleDescription(el) {
+    el.classList.toggle("active");
+  }
+</script>
+
+</body>
+</html>

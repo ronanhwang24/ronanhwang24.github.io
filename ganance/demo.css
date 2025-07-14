@@ -1,0 +1,66 @@
+.header-text {
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 40px; /* Optional spacing from navbar */
+    margin-bottom: 60px; /* Optional spacing from navbar */
+  }
+  
+/* Style the tab buttons */
+.tab-container {
+    display: flex;
+    width: 80%;          /* Tabs span 80% of page */
+    margin: 0 auto;      /* Center the tab container */
+    padding: 0;
+  }
+  
+  .tablink {
+    width: 50%;          /* Exactly half of container (80%) */
+    padding: 14px 0;
+    font-size: 17px;
+    background-color: #555;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0;           /* Important: remove space between buttons */
+  }
+  
+  
+  
+  .tablink:hover {
+    background-color: #777;
+  }
+  
+  .tabcontent {
+    color: black;
+    display: none;
+    padding: 50px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 80%;          /* Same as tab width */
+    margin: 0 auto;      /* Center it under the tabs */
+    border-radius: 0px;
+    box-sizing: border-box;
+  }
+  
+  
+  #TryDemo {
+    background-color: #f9c74f; /* Yellow */
+  }
+  
+  #TutorialVideo {
+    background-color: #90be6d; /* Green */
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url('ganance_home.png'); /* Path to your image */
+    background-size: cover;               /* Scale image to cover screen */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;         /* Optional: keeps image fixed on scroll */
+  }

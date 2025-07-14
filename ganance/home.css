@@ -1,0 +1,119 @@
+/* Reset + Base Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-style: normal;  
+  scroll-behavior: smooth;
+}
+
+/* Heading Font Styling */
+h1, h2, h3 {
+  font-family: 'Merriweather', serif;
+}
+
+/* Parallax Hero */
+.parallax {
+  position: relative;
+  background-image: url('ganance_home.png');
+  height: 100vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 90% center;
+  color: grey;
+}
+
+.parallax-title {
+  position: absolute;
+  font-size: 35px;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+}
+
+.parallax-title h1 {
+  font-size: 3em;
+  line-height: 1.2;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* General Sections */
+.section {
+  padding: 60px 30px;
+  background-color: #f4f4f4;
+}
+
+.section h1 {
+  margin-bottom: 20px;
+}
+
+.section p {
+  line-height: 1.6;
+}
+
+/* Gallery Section */
+.gallery-section h1 {
+  font-size: 2.5rem; /* You can adjust this value as needed */
+  font-weight: 600;  /* Optional: makes the text bolder */
+  margin-bottom: 20px; /* Adds space below the header */
+}
+
+.gallery-section {
+  padding: 50px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.gallery-item {
+  width: 320px; /* was 250px */
+  padding: 20px; /* slightly more padding for spacing */
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 220px;     /* was 180px */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.gallery-item h2 {
+  font-size: 25px; /* was 18px */
+  margin-bottom: 10px;
+}
+
+/* Description toggle under each photo */
+.photo-description {
+  display: none;
+  font-size: 14px;
+  color: #333;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.gallery-item.active .photo-description {
+  display: block;
+}

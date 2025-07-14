@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+    <title>Ganance Summer Internship</title>
+    <link rel='stylesheet' href='home.css'>
+    <link rel='stylesheet' href='nav.css'>
+    <link rel='stylesheet' href='demo.css'> <!-- Ensure this link is included -->
+</head>
+<body>
+
+    <!-- Nav Bar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="home.html"><img src="ganance_logo.avif" alt="Home" class="logo"></a>
+        </div>
+        <div class="nav-center">
+            <a href="demo.html">Demo</a>
+            <!-- Dropdown Menu -->
+            <div class="dropdown">
+                <button class="dropbtn">More ▾</button>
+                <div class="dropdown-content">
+                    <a href="documentation.html">Documentation</a>
+                    <a href="https://github.com/ronanhwang24/ronanhwang24.github.io/tree/main/ganance" target="_blank">GitHub</a>
+                    <a href="other-files.html">Other Files</a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-right">
+            <!-- Resume Link -->
+            <a href="Hwang,Ronan_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                <img src="resume.png" alt="Resume" class="nav-icon">
+            </a>
+            <!-- LinkedIn Link -->
+            <a href="https://www.linkedin.com/in/ronanhwang/" target="_blank">
+                <img src="linkedin.png" alt="LinkedIn" class="nav-icon">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Demo and Tutorial -->
+    <div class="header-text">
+        <h2>Demo and Tutorial</h2>
+        <p>Click on the buttons below to navigate between the demo and tutorial video:</p>
+    </div>
+  
+    <!-- Tab buttons wrapped in a container for flex layout -->
+    <div class="tab-container">
+        <button class="tablink" onclick="openTab('TryDemo', this, '#f9c74f')" id="defaultOpen">Try Demo</button>
+        <button class="tablink" onclick="openTab('TutorialVideo', this, '#90be6d')">Tutorial Video</button>
+    </div>
+
+    <!-- Tab content for Try Demo -->
+    <div id="TryDemo" class="tabcontent">
+      <h3>Try the Demo</h3>
+      <p>Try demo, model is here, enter .csv file. more to come!</p>
+    </div>
+
+    <!-- Tab content for Tutorial Video -->
+    <div id="TutorialVideo" class="tabcontent">
+      <h3>Tutorial video</h3>
+      <p>Video explainaing data retrieval process, model creating process, etc., also shows how to use demo</p>
+      <!-- Example YouTube video embed -->
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <script>
+      function openTab(tabName, elmnt, color) {
+        var i, tabcontent, tablinks;
+
+        // Hide all tab content
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        // Remove the background color of all tab links
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].style.backgroundColor = "";
+        }
+
+        // Show the content for the clicked tab and set the color of the tab
+        document.getElementById(tabName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+      }
+
+      // Open the default tab (Try Demo) by default
+      document.getElementById("defaultOpen").click();
+    </script>
+
+</body>
+</html>

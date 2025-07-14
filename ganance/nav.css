@@ -1,0 +1,118 @@
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .nav-left, .nav-center, .nav-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-left img.logo {
+    height: 40px;
+  }
+  
+  .nav-center {
+    gap: 30px;
+    justify-content: center;
+    flex-grow: 1;
+    position: relative; /* Needed for left offset */
+    left: -50px; /* Moves the entire block left by 50px */
+  }
+  
+  
+  
+  .nav-center a, .nav-right a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+  }
+  
+  /* Make "Demo" tab slightly bigger */
+  .nav-center a[href="demo.html"] {
+    font-size: 20px;
+    font-weight: 200;
+  }
+  
+  /* Make "Demo" tab slightly bigger */
+  .nav-center a[href="#more"] {
+    font-size: 20px;
+    font-weight: 200;
+  }
+  
+  /* Hover effect for nav links */
+  .nav-center a:hover, .nav-right a:hover {
+    color: #00e0ff;
+  }
+  
+  /* Nav icons */
+  .nav-right img {
+    height: 55px;
+    width: 55px;
+    margin-left: 10px;
+    cursor: pointer;
+    object-fit: contain;
+  }
+  
+  .nav-icon {
+    filter: invert(100%);
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+  
+  /* Dropdown */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropbtn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 600; /* Or any desired weight */
+    font-family: "Merriweather", serif;
+    cursor: pointer;
+    margin: 0 10px;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    min-width: 160px;
+    z-index: 1000;
+    right: 0;
+    border-radius: 4px;
+  }
+  
+  .dropdown-content a {
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s ease;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
