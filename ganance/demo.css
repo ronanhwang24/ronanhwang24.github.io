@@ -18,7 +18,8 @@
     width: 50%;          /* Exactly half of container (80%) */
     padding: 14px 0;
     font-size: 17px;
-    background-color: #555;
+    background-color: #555; /* default color, no !important */
+    transition: background-color 0.3s ease;
     color: white;
     border: none;
     outline: none;
@@ -46,13 +47,12 @@
     box-sizing: border-box;
   }
   
-  
   #TryDemo {
-    background-color: #f9c74f; /* Yellow */
+    background-color: #d9b21a; /* Yellow */
   }
   
   #TutorialVideo {
-    background-color: #90be6d; /* Green */
+    background-color: #c7c4b9; /* Green */
   }
   
   body {

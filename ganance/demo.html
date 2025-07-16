@@ -50,8 +50,8 @@
   
     <!-- Tab buttons wrapped in a container for flex layout -->
     <div class="tab-container">
-        <button class="tablink" onclick="openTab('TryDemo', this, '#f9c74f')" id="defaultOpen">Try Demo</button>
-        <button class="tablink" onclick="openTab('TutorialVideo', this, '#90be6d')">Tutorial Video</button>
+        <button class="tablink" onclick="openTab('TryDemo', this, '#d9b21a')" id="defaultOpen">Try Demo</button>
+        <button class="tablink" onclick="openTab('TutorialVideo', this, '#c7c4b9')">Tutorial Video</button>
     </div>
 
     <!-- Tab content for Try Demo -->
@@ -65,33 +65,36 @@
       <h3>Tutorial video</h3>
       <p>Video explainaing data retrieval process, model creating process, etc., also shows how to use demo</p>
       <!-- Example YouTube video embed -->
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/watch?v=XLPDsWC77dQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     <script>
       function openTab(tabName, elmnt, color) {
-        var i, tabcontent, tablinks;
-
         // Hide all tab content
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
+        const tabcontent = document.getElementsByClassName("tabcontent");
+        for (let i = 0; i < tabcontent.length; i++) {
           tabcontent[i].style.display = "none";
         }
-
-        // Remove the background color of all tab links
-        tablinks = document.getElementsByClassName("tablink");
-        for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].style.backgroundColor = "";
+    
+        // Reset all tab buttons to default background
+        const tablinks = document.getElementsByClassName("tablink");
+        for (let i = 0; i < tablinks.length; i++) {
+          tablinks[i].style.backgroundColor = "#555"; // default tab color
         }
-
-        // Show the content for the clicked tab and set the color of the tab
+    
+        // Show selected tab
         document.getElementById(tabName).style.display = "block";
+    
+        // Set active tab button background to match the tab content
         elmnt.style.backgroundColor = color;
       }
-
-      // Open the default tab (Try Demo) by default
-      document.getElementById("defaultOpen").click();
+    
+      // Auto-click the default tab on page load
+      window.onload = function () {
+        document.getElementById("defaultOpen").click();
+      };
     </script>
+    
 
 </body>
 </html>
