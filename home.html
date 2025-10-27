@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ronan Hwang | Data Science & Baseball</title>
+
+  <style>
+    /* ---- Global Styles ---- */
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.2rem;
+    }
+
+    header h2 {
+      color: #6b7280;
+      font-weight: 400;
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    section {
+      max-width: 850px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    h3 {
+      border-left: 4px solid #2563eb;
+      padding-left: 10px;
+      margin-top: 0;
+    }
+
+    .profile {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .profile img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 0 4px #2563eb33;
+    }
+
+    .profile-text {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 1rem;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #2563eb11;
+      color: #2563eb;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      margin-left: 0.4rem;
+    }
+
+    footer {
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.9rem;
+      padding: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Ronan Hwang</h1>
+    <h2>Data Science @ Tufts University | Baseball Player</h2>
+  </header>
+
+  <section id="about">
+    <div class="profile">
+      <img src="profile.jpg" alt="Ronan Hwang Profile Photo" />
+      <div class="profile-text">
+        <p>Hi! I’m Ronan — a junior at Tufts University majoring in Data Science and playing baseball. I’m passionate about combining analytics, sports, and technology to uncover insights and tell compelling stories through data.</p>
+        <p>
+          <a href="resume.pdf" target="_blank">📄 View Resume</a> |
+          <a href="mailto:ronan.hwang@example.com">✉️ Email</a> |
+          <a href="https://www.linkedin.com/in/ronanhwang" target="_blank">🔗 LinkedIn</a> |
+          <a href="https://github.com/ronanhwang" target="_blank">💻 GitHub</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h3>Experience</h3>
+    <ul>
+      <li>
+        <strong>Data Science Intern</strong> — NavLabs <span class="tag">May 2024 – Aug 2024</span><br/>
+        Developed machine learning models to improve data quality and built internal dashboards to visualize key metrics.
+      </li>
+      <li>
+        <strong>Baseball Analytics Intern</strong> — Zag Sports <span class="tag">May 2023 – Aug 2023</span><br/>
+        Worked on player tracking and performance analysis using Python and SQL to optimize recruitment insights.
+      </li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h3>Projects</h3>
+    <ul>
+      <li>
+        <strong>MLB Pitch Classification</strong> — Built a Random Forest model to classify
