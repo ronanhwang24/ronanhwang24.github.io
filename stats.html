@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLB Player Stats Tracker</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; margin: 0; padding: 0; }
+        header { background-color: #003366; color: white; padding: 10px 20px; text-align: center; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 8px 12px; text-align: left; border: 1px solid #ddd; }
+        th { background-color: #003366; color: white; }
+        .stats { text-align: center; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MLB Player Stats Tracker</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Player Statistics</h2>
+            <table id="player-stats-table">
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th>Team</th>
+                        <th>Games Played</th>
+                        <th>At Bats</th>
+                        <th>Hits</th>
+                        <th>Home Runs</th>
+                        <th>Batting Average</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Player stats will be inserted here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const playerId = '493316'; // Example player ID (e.g., Mike Trout)
+            const season = '2025';
+            const league = 'mlb';
+            const gameType = 'R'; // Regular season
+
+            const url = `http://lookup-service-prod.mlb.com/json/named.sport_hitting_tm.bam?league_list_id='${league}'&game_type='${gameType}'&season='${season}'&player_id='${playerId}'`;
+
+            $.getJSON(url, function(data) {
+                const stats = data.sport_hitting_tm.queryResults.row;
+                const row = `
+                    <tr>
+                        <td>${stats.player_id}</td>
+                        <td>${stats.team_id}</td>
+                        <td class="stats">${stats.g}</td>
+                        <td class="stats">${stats.ab}</td>
+                        <td class="stats">${stats.h}</td>
+                        <td class="stats">${stats.hr}</td>
+                        <td class="stats">${stats.avg}</td>
+                    </tr>
+                `;
+                $('#player-stats-table tbody').append(row);
+            });
+        });
+    </script>
+</body>
+</html>
