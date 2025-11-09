@@ -1,3 +1,17 @@
+function getGreeting() {
+    const hour = new Date().getHours();
+    if (hour < 12) return "Good morning!";
+    if (hour < 18) return "Good afternoon!";
+    return "Good evening!";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const greetingEl = document.getElementById("greeting");
+    if (greetingEl) {
+        greetingEl.textContent = getGreeting();
+    }
+});
+
 const fileInput = document.getElementById('csvFile');
 const uploadStatus = document.getElementById('uploadStatus');
 const pitcherSelect = document.getElementById('pitcherSelect');
@@ -96,16 +110,57 @@ const pitchTypes = [...new Set(filtered.map(row => row.pitch_type).filter(Boolea
 const pitchStats = [];
 
 pitchTypes.forEach(pitch => {
-  const pitches = filtered.filter(row => row.pitch_type === pitch);
-  const count = pitches.length;
-  const percent = ((count / filtered.length) * 100).toFixed(2);
-  const speeds = pitches.map(row => parseFloat(row.release_speed)).filter(v => !isNaN(v));
-  const max = Math.max(...speeds).toFixed(1);
-  const min = Math.min(...speeds).toFixed(1);
-  const avg = (speeds.reduce((a, b) => a + b, 0) / speeds.length).toFixed(1);
+    const pitches = filtered.filter(row => row.pitch_type === pitch);
+    const count = pitches.length;
+    const percent = ((count / filtered.length) * 100).toFixed(2);
+    const speeds = pitches.map(row => parseFloat(row.release_speed)).filter(v => !isNaN(v));
+    const max = Math.max(...speeds).toFixed(1);
+    const min = Math.min(...speeds).toFixed(1);
+    const avg = (speeds.reduce((a, b) => a + b, 0) / speeds.length).toFixed(1);
+  
+    // Count breakdowns
+    const count_1_1 = pitches.filter(p => p.balls === "1" && p.strikes === "1");
+    const count_02_12 = pitches.filter(p =>
+      (p.balls === "0" && p.strikes === "2") || (p.balls === "1" && p.strikes === "2")
+    );
+    const count_22_32 = pitches.filter(p =>
+      (p.balls === "2" && p.strikes === "2") || (p.balls === "3" && p.strikes === "2")
+    );
+  
+    const format = (subset) => `${subset.length} (${((subset.length / count) * 100).toFixed(1)}%)`;
+  
+    pitchStats.push({
+      pitch,
+      count,
+      percent,
+      max,
+      min,
+      avg,
+      "1-1": format(count_1_1),
+      "0-2/1-2": format(count_02_12),
+      "2-2/3-2": format(count_22_32)
+    });
+  });
 
-  pitchStats.push({ pitch, count, percent, max, min, avg });
-});
+  const headers = [
+    "Pitch Type", "Count", "%", "Max Velo", "Min Velo", "Avg Velo",
+    "1-1", "0-2/1-2", "2-2/3-2"
+  ];
+  
+  let html = "<table><thead><tr>";
+  headers.forEach(header => {
+    html += `<th>${header}</th>`;
+  });
+  html += "</tr></thead><tbody>";
+  
+  pitchStats.forEach(stat => {
+    html += "<tr>";
+    headers.forEach(header => {
+      html += `<td>${stat[header] || ""}</td>`;
+    });
+    html += "</tr>";
+  });
+  html += "</tbody></table>";
 
 // 🥧 Pie chart
 const pieData = [{
@@ -127,8 +182,22 @@ const pieLayout = {
 Plotly.newPlot('pitchPieChart', pieData, pieLayout);
 
 
-// Table
-let tableHTML = "<table><thead><tr><th>Pitch Type</th><th>Pitches Thrown</th><th>Max Velo</th><th>Min Velo</th><th>Avg Velo</th></tr></thead><tbody>";
+// Table with count breakdowns
+let tableHTML = `<table>
+  <thead>
+    <tr>
+      <th>Pitch Type</th>
+      <th>Pitches Thrown</th>
+      <th>Max Velo</th>
+      <th>Min Velo</th>
+      <th>Avg Velo</th>
+      <th>1-1</th>
+      <th>0-2/1-2</th>
+      <th>2-2/3-2</th>
+    </tr>
+  </thead>
+  <tbody>`;
+
 pitchStats.forEach(stat => {
   tableHTML += `<tr>
     <td>${stat.pitch}</td>
@@ -136,12 +205,14 @@ pitchStats.forEach(stat => {
     <td>${stat.max} mph</td>
     <td>${stat.min} mph</td>
     <td>${stat.avg} mph</td>
+    <td>${stat["1-1"]}</td>
+    <td>${stat["0-2/1-2"]}</td>
+    <td>${stat["2-2/3-2"]}</td>
   </tr>`;
 });
+
 tableHTML += "</tbody></table>";
-
 pitchBreakdown.innerHTML = tableHTML;
-
 
   // Strike zone chart
   const pitchSamples = {};
