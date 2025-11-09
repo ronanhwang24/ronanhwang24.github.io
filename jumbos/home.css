@@ -1,0 +1,221 @@
+/* Big pitcure css */
+body {
+    font-family: Verdana, sans-serif;
+    background-color: white;
+    color: rgba(255, 255, 255, 0.896);
+    margin: 0;
+    line-height: 1.7;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.2rem;
+    background: #14225A;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid #14225A;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+} 
+
+nav a {
+    color: white;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: none;
+}
+
+section {
+    width: 90vw;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 1.5rem;
+}
+
+p {
+    font-size: 1.05rem;
+    color: black;
+    margin-bottom: 1.3rem;
+}
+
+input[type="file"], input[type="text"], select {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+#uploadStatus {
+    font-size: 1rem;
+    color: green;
+    margin-bottom: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 0.6rem;
+    text-align: left;
+    font-size: 0.95rem;
+    color: black;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #e5e7eb;
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-top: 4rem;
+}
+
+/* Flexbox for Pie chart and Pitches table */
+.breakdown-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Pitches Table */
+.breakdown-table {
+    flex: 1 1 500px;
+    min-width: 300px;
+}
+
+/* Pie Chart */
+.breakdown-chart {
+    flex: 1 1 400px;
+    min-width: 300px;
+}
+
+/* MediaQueries */
+@media (max-width: 1023px) {
+    .breakdown-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .breakdown-chart {
+        margin: 0 auto;
+        text-align: center;
+    }
+    .breakdown-table {
+            width: 100%;
+    }
+    .chart-pair-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #strikeZoneChart, #movementChart {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .boxplot-pair-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #exitVelocityChart, #launchAngleChart {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+/* Flexbox for strike zone and movement plots */
+.chart-pair-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin: 2rem auto;
+    max-width: 100%;
+}
+
+/* Keeping style same for both plots */
+#strikeZoneChart, #movementChart {
+    flex: 1 1 500px;
+    aspect-ratio: 1.2;
+    min-width: 300px;
+    max-width: 600px;
+    height: auto;
+}
+ 
+/* Flexbox for the hitting related plots */
+.boxplot-pair-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+  
+/* Keeping style same for both hitting plots */
+#exitVelocityChart, #launchAngleChart {
+    flex: 1 1 500px;
+    aspect-ratio: 1.2;
+    min-width: 300px;
+    max-width: 600px;
+    height: auto;
+}
+
+/* Spray chart flexbox */
+.spray-chart-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+/* Spray chart plot styling */
+#sprayChart {
+    width: 100%;
+    aspect-ratio: 1.2;
+    max-width: 700px;
+    height: auto;
+}
+
+/* Style radio buttons */
+.batter-side-filter {
+    margin: 1rem 0;
+    font-size: 1rem;
+}  
+
+/* Style radio buttons font color */
+.batter-side-filter * {
+    color: black;
+}
+
+/* Style for text */
+label[for="pitcherSelect"],
+label[for="customPitcher"],
+label[for="chartTitle"],
+label[for="timeframeSelect"]
+{
+    color: black;
+}
