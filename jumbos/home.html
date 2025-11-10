@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ronan Hwang - Nationals Webpage</title>
+
+    <!-- PapaParse for CSV parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    
+    <!-- Plot.ly for plotting graphs -->
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <link rel="stylesheet" href="home.css">
+
+</head>
+
+<body>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="https://www.linkedin.com/in/ronanhwang" target="_blank">LinkedIn</a>
+    </nav>
+
+    <section id="content">
+        
+        <h1 id="greeting">Hello!</h1>
+
+        <p>Please upload a CSV file with pitcher data</p>
+        <input type="file" id="csvFile" accept=".csv" />
+        <div id="uploadStatus"></div>
+        
+        <label for="pitcherSelect">Select Pitcher</label>
+        <select id="pitcherSelect">
+            <option value="">Select a pitcher</option>
+            <option>Logan Webb</option>
+            <option>Carlos Rodón</option>
+            <option>Garrett Crochet</option>
+            <option>Zac Gallen</option>
+            <option>Max Fried</option>
+            <option>Jake Irvin</option>
+            <option>MacKenzie Gore</option>
+            <option>Brad Lord</option>
+            <option>Jose A. Ferrer</option>
+            <option>Matt Waldron</option>
+        </select>
+
+        <label for="customPitcher">Want another pitcher? Enter Pitcher Below(E.g. Shohei Ohtani)</label>
+        <input type="text" id="customPitcher" placeholder="Type pitcher name..." />
+
+        <label for="timeframeSelect">Select Outing(Press shift to select multiple):</label>
+        <select id="timeframeSelect" multiple size="5">
+            <option value="all">Select All</option>
+        </select>
+        
+        <div class="batter-side-filter">
+            <label><strong>Hitter Handedness:</strong></label><br>
+            <input type="radio" name="batterSide" value="all" id="batterAll" checked>
+            <label for="batterAll">All</label>
+            <input type="radio" name="batterSide" value="left" id="batterLeft">
+            <label for="batterLeft">vs Lefties</label>
+            <input type="radio" name="batterSide" value="right" id="batterRight">
+            <label for="batterRight">vs Righties</label>
+        </div>
+        
+        <label for="chartTitle">Charts(Press on pitches in the key to filter specific pitches):</label>
+        
+        <div class="breakdown-container">
+            <div class="breakdown-table" id="pitchBreakdown"></div>
+            <div class="breakdown-chart" id="pitchPieChart"></div>
+        </div>  
+        
+        <div class="chart-pair-container">
+            <div id="strikeZoneChart"></div>
+            <div id="movementChart"></div>
+        </div>
+
+        <div class="boxplot-pair-container">
+            <div id="exitVelocityChart"></div>
+            <div id="launchAngleChart"></div>
+        </div>
+
+        <div class="spray-chart-container">
+            <div id="sprayChart"></div>
+        </div>
+    </section>
+
+    <footer>
+        © 2025 Ronan Hwang • Built with HTML & CSS & Microsoft Copilot
+    </footer>
+</body>
+    <script src="script.js"></script>
+</html>
