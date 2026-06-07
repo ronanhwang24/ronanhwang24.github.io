@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resilience Flashcards</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f5f3ee;
+    min-height: 100vh;
+    padding: 0 0 60px;
+  }
+
+  .banner {
+    background: #2c2c2a;
+    color: #fff;
+    padding: 20px 20px 16px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .banner h1 {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .banner p {
+    font-size: 13px;
+    color: #b4b2a9;
+    line-height: 1.5;
+  }
+
+  .banner em {
+    color: #fac775;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .progress-bar {
+    height: 3px;
+    background: #444441;
+    margin-top: 14px;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: #fac775;
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+
+  .counter {
+    font-size: 12px;
+    color: #888780;
+    margin-top: 6px;
+  }
+
+  .scroll-container {
+    padding: 24px 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* --- flip card --- */
+  .card-wrap {
+    perspective: 1000px;
+  }
+
+  .card-inner {
+    position: relative;
+    width: 100%;
+    transition: transform 0.55s cubic-bezier(.4,0,.2,1);
+    transform-style: preserve-3d;
+  }
+
+  .card-wrap.flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .card-face {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    background: #fff;
+    border-radius: 16px;
+    border: 0.5px solid #d3d1c7;
+    overflow: hidden;
+  }
+
+  .card-back {
+    position: absolute;
+    top: 0; left: 0; width: 100%;
+    transform: rotateY(180deg);
+  }
+
+  /* front face */
+  .front-body {
+    padding: 36px 24px;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .card-number {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #888780;
+    margin-bottom: 14px;
+  }
+
+  .word {
+    font-size: 30px;
+    font-weight: 700;
+    color: #2c2c2a;
+    margin-bottom: 12px;
+  }
+
+  .tap-hint {
+    font-size: 12px;
+    color: #b4b2a9;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 6px;
+  }
+
+  /* back face */
+  .back-body {
+    padding: 28px 24px 20px;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    background: #eeedfe;
+  }
+
+  .back-word {
+    font-size: 15px;
+    font-weight: 600;
+    color: #534ab7;
+    margin-bottom: 10px;
+    letter-spacing: 0.02em;
+  }
+
+  .definition {
+    font-size: 16px;
+    color: #3c3489;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  .tap-hint-back {
+    font-size: 12px;
+    color: #afa9ec;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* tip dropdown — lives OUTSIDE the flip so it doesn't get clipped */
+  .tip-section {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    border-radius: 0 0 16px 16px;
+  }
+
+  .tip-section.visible {
+    max-height: 200px;
+    opacity: 1;
+  }
+
+  .reveal-btn {
+    width: 100%;
+    background: #fff;
+    border: none;
+    border-top: 0.5px solid #d3d1c7;
+    border-left: 0.5px solid #d3d1c7;
+    border-right: 0.5px solid #d3d1c7;
+    padding: 13px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #888780;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .reveal-btn:hover { background: #f5f3ee; }
+
+  .reveal-btn svg {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .reveal-btn.open svg { transform: rotate(180deg); }
+
+  .tip-inner {
+    padding: 16px 20px 20px;
+    background: #faeeda;
+    border: 0.5px solid #fac775;
+    border-top: none;
+    border-radius: 0 0 16px 16px;
+  }
+
+  .tip-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #854f0b;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .tip-text {
+    font-size: 14px;
+    color: #633806;
+    line-height: 1.6;
+  }
+
+  /* card appears hidden until flipped */
+  .tip-trigger-wrap {
+    display: none;
+  }
+
+  .card-wrap.flipped .tip-trigger-wrap {
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <h1>🔑 Key Tip</h1>
+  <p>Use things that remind you of certain other things.<br>
+  For example: <em>Adaptable</em> → adapt, change, I can change easily...<br>
+  <em>Optimistic</em> → Optimus Prime, positive leader, believes in good.</p>
+  <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+  <div class="counter" id="counter">Tap a card to flip it</div>
+</div>
+
+<div class="scroll-container" id="cardContainer"></div>
+
+<script>
+const cards = [
+  { word: "Resilient", definition: "Able to bounce back quickly from difficulties.", tip: "Like a rubber band — it always bounces back, no matter how far it stretches." },
+  { word: "Grit", definition: "Courage and determination to keep going even when there are challenges.", tip: "Think of gritty sand or gravel — tough and rough, just like determination." },
+  { word: "Adaptable", definition: "Able to adjust easily to new situations.", tip: "A chameleon changes colors to fit in — adaptable means you can change too." },
+  { word: "Tenacious", definition: "Not giving up.", tip: "Like a bulldog that never lets go, no matter what." },
+  { word: "Driven", definition: "Motivated and focused on achieving goals.", tip: "Imagine a race car driver locked on the finish line — nothing breaks their focus." },
+  { word: "Optimistic", definition: "Expecting good outcomes, focusing on the positive.", tip: "Optimus Prime — the positive leader who always believes good will win." },
+  { word: "Open-minded", definition: "Willing to consider new ideas and perspectives.", tip: "Picture an open door letting fresh new ideas walk right in." },
+  { word: "Determined", definition: "Firmly decided and committed to a goal.", tip: "Like a GPS locked on its destination — it won't change course, no matter what." },
+  { word: "Courageous", definition: "Brave in facing fear.", tip: "A superhero standing tall against danger, even when afraid." },
+  { word: "Poised", definition: "Calm, confident, and balanced under pressure.", tip: "A ballerina balanced gracefully on stage — steady and composed, always." }
+];
+
+const flipped = new Set();
+const tipped = new Set();
+
+function chevron() {
+  return `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4.5l5 5 5-5"/></svg>`;
+}
+
+function flipCard(i) {
+  const wrap = document.getElementById('wrap-' + i);
+  const alreadyFlipped = wrap.classList.contains('flipped');
+  wrap.classList.toggle('flipped');
+  if (!alreadyFlipped && !flipped.has(i)) {
+    flipped.add(i);
+    updateProgress();
+  }
+}
+
+function toggleTip(i) {
+  const btn = document.getElementById('tipbtn-' + i);
+  const section = document.getElementById('tipsec-' + i);
+  const open = section.classList.contains('visible');
+  section.classList.toggle('visible');
+  btn.classList.toggle('open');
+  btn.innerHTML = open
+    ? chevron() + ' Show memory tip'
+    : chevron() + ' Hide memory tip';
+  if (!open && !tipped.has(i)) {
+    tipped.add(i);
+  }
+}
+
+function updateProgress() {
+  const pct = Math.round((flipped.size / cards.length) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  if (flipped.size === cards.length) {
+    document.getElementById('counter').textContent = '🎉 All cards flipped — great work!';
+  } else {
+    document.getElementById('counter').textContent = `${flipped.size} of ${cards.length} cards flipped`;
+  }
+}
+
+function render() {
+  const container = document.getElementById('cardContainer');
+  cards.forEach((c, i) => {
+    const el = document.createElement('div');
+    el.innerHTML = `
+      <div class="card-wrap" id="wrap-${i}">
+        <div class="card-inner">
+
+          <div class="card-face front-face" onclick="flipCard(${i})">
+            <div class="front-body">
+              <div class="card-number">Card ${i+1} of ${cards.length}</div>
+              <div class="word">${c.word}</div>
+              <div class="tap-hint">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="#b4b2a9" stroke-width="1.6"><path d="M6.5 1v5.5M6.5 6.5l2-2M6.5 6.5l-2-2"/><rect x="1" y="7" width="11" height="5" rx="2"/></svg>
+                Tap to flip
+              </div>
+            </div>
+          </div>
+
+          <div class="card-face card-back" onclick="flipCard(${i})">
+            <div class="back-body">
+              <div class="back-word">${c.word}</div>
+              <div class="definition">${c.definition}</div>
+              <div class="tap-hint-back">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="#afa9ec" stroke-width="1.6"><path d="M6.5 12V6.5M6.5 6.5l2 2M6.5 6.5l-2 2"/><rect x="1" y="1" width="11" height="5" rx="2"/></svg>
+                Tap to flip back
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="tip-trigger-wrap">
+          <button class="reveal-btn" id="tipbtn-${i}" onclick="toggleTip(${i})">
+            ${chevron()} Show memory tip
+          </button>
+          <div class="tip-section" id="tipsec-${i}">
+            <div class="tip-inner">
+              <div class="tip-label">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#854f0b" stroke-width="1.8"><circle cx="6" cy="6" r="5"/><path d="M6 4v2.5M6 8h.01"/></svg>
+                Memory tip
+              </div>
+              <div class="tip-text">${c.tip}</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    `;
+    container.appendChild(el.firstElementChild);
+  });
+}
+
+render();
+</script>
+</body>
+</html>
